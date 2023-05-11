@@ -12,4 +12,6 @@ import_tables:
   - en_dicts/en      # 英文主词库
   - en_dicts/cn_en_double   # 中英混输词库,双拼版
 #  - en_dicts/cn_en   # 中英混输词库，里面是写死了的全拼编码，双拼应该注释掉这一行。
+  # - en_dicts/cn_en_double_pinyin_ziguang  # 紫光双拼
+  # - en_dicts/cn_en_double_pinyin_abc      # 智能 ABC 双拼
 ...
