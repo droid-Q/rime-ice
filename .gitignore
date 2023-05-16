@@ -1,6 +1,6 @@
 build/
 rime_ice.userdb/MANIFEST*
 rime_ice.userdb/LOG*
-/rime_ice.userdb/CURRENT
-rime_ice.userdb/*.log
-rime_ice.userdb/*.ldb
+en_dicts/.DS_Store
+others/.DS_Store
+.DS_Store
