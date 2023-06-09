@@ -4,7 +4,7 @@ __build_info:
     default: 1685334055
     default.custom: 0
     melt_eng.custom: 0
-    melt_eng.schema: 1683679376
+    melt_eng.schema: 1686009143
 engine:
   filters:
     - uniquifier
@@ -125,10 +125,18 @@ schema:
 speller:
   algebra:
     - "derive/['\\-_+,.]+//"
-    - "derive/^(.+)$/\\L$1/"
-    - "derive/^([a-z].+)$/\\U$1/"
-    - "derive/^([a-zA-Z])/\\U$1/"
-    - "derive/^([a-z][a-z])/\\U$1/"
+    - "derive/^.+$/\\L$0/"
+    - "derive/^.+$/\\U$0/"
+    - "derive/^./\\U$0/"
+    - "derive/^([a-z]{2})/\\U$1/"
+    - "derive/^([a-z]{3})/\\U$1/"
+    - "derive/^([a-z]{4})/\\U$1/"
+    - "derive/^([a-z]{5})/\\U$1/"
+    - "derive/^([a-z]{6})/\\U$1/"
+    - "derive/^([a-z]{7})/\\U$1/"
+    - "derive/^([a-z]{8})/\\U$1/"
+    - "derive/^([a-z]{9})/\\U$1/"
+    - "derive/^([a-z]{10})/\\U$1/"
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA-_"
   delimiter: " '"
 switches:
