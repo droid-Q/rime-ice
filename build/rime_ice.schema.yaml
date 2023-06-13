@@ -4,7 +4,7 @@ __build_info:
     default: 1685334055
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1686009143
+    rime_ice.schema: 1686289877
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -27,8 +27,8 @@ engine:
   filters:
     - "simplifier@emoji"
     - "simplifier@traditionalize"
-    - "lua_filter@autocap_filter"
     - "lua_filter@v_filter"
+    - "lua_filter@autocap_filter"
     - "lua_filter@reduce_english_filter"
     - "lua_filter@long_word_filter"
     - uniquifier
@@ -665,7 +665,6 @@ speller:
     - "derive/^([nl])ve$/$1ue/"
     - "derive/^([jqxy])u/$1v/"
     - "derive/^([jqxy])v/$1u/"
-    - "xlit/āḃçďēḟḡĥīĵḱĺḿńōṕɋŕśťūṽẃẋȳź/ABCDEFGHIJKLMNOPQRSTUVWXYZ/"
     - "derive/([zcs])h(a|e|i|u|ai|ei|an|en|ou|uo|ua|un|ui|uan|uai|uang|ang|eng|ong)$/h$1$2/"
     - "derive/([zcs])h([aeiu])$/$1$2h/"
     - "derive/^([wghk])ai$/$1ia/"
