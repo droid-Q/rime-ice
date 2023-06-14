@@ -4,7 +4,7 @@ __build_info:
     default: 1685334055
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1686289877
+    rime_ice.schema: 1686727923
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -30,8 +30,8 @@ engine:
     - "lua_filter@v_filter"
     - "lua_filter@autocap_filter"
     - "lua_filter@reduce_english_filter"
-    - "lua_filter@long_word_filter"
     - uniquifier
+    - "lua_filter@long_word_filter"
   processors:
     - "lua_processor@select_character"
     - ascii_composer
@@ -652,7 +652,7 @@ schema:
 
   name: "雾凇拼音"
   schema_id: rime_ice
-  version: "2023-05-16"
+  version: "2023-06-13"
 speller:
   algebra:
     - "erase/^hm$/"
