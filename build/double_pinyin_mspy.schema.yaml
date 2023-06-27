@@ -1,10 +1,10 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1685334055
+    default: 1687665522
     default.custom: 0
     double_pinyin_mspy.custom: 0
-    double_pinyin_mspy.schema: 1686289877
+    double_pinyin_mspy.schema: 1687665522
     symbols_caps_v: 1681357855
     symbols_caps_v.custom: 0
 custom_phrase:
