@@ -4,12 +4,22 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"script/rime"
 	"strings"
 )
 
 func main() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
+	if len(os.Args) > 1 {
+		if os.Args[1] == "sort" {
+			goto SORT
+		}
+		if os.Args[1] == "temp" {
+			rime.Pinyin(filepath.Join(rime.RimeDir, "cn_dicts/temp"))
+			return
+		}
+	}
 
 	// 临时
 	rime.Temp()
@@ -22,9 +32,13 @@ func main() {
 	rime.CnEn()
 	fmt.Println("--------------------------------------------------")
 
+	// 为没注音的词汇半自动注音
+	rime.Pinyin(rime.ExtPath)
+	fmt.Println("--------------------------------------------------")
+
 	// 为 ext、tencent 没权重的词条加上权重，有权重的改为下面设置的权重
-	rime.AddWeight(rime.ExtPath, rime.DefaultWeight)
-	rime.AddWeight(rime.TencentPath, rime.DefaultWeight)
+	rime.AddWeight(rime.ExtPath, 100)
+	rime.AddWeight(rime.TencentPath, 100)
 	fmt.Println("--------------------------------------------------")
 
 	// 检查
@@ -37,6 +51,7 @@ func main() {
 
 	areYouOK()
 
+SORT:
 	// 排序，顺便去重
 	rime.Sort(rime.HanziPath, 3)
 	rime.Sort(rime.BasePath, 3)
