@@ -4,7 +4,7 @@ __build_info:
     default: 1687665522
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1687844212
+    rime_ice.schema: 1688352924
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -30,7 +30,6 @@ engine:
     - "lua_filter@v_filter"
     - "lua_filter@autocap_filter"
     - "lua_filter@reduce_english_filter"
-    - "lua_filter@long_word_filter"
     - uniquifier
   processors:
     - "lua_processor@select_character"
@@ -76,9 +75,6 @@ liangfen:
   dictionary: liangfen
   enable_completion: true
   prefix: u
-long_word_filter:
-  count: 2
-  idx: 4
 melt_eng:
   comment_format:
     - "xform/.*//"
