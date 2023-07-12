@@ -4,7 +4,7 @@ __build_info:
     default: 1687665522
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1688352924
+    rime_ice.schema: 1688950423
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -637,6 +637,8 @@ reduce_english_filter:
     - chap
     - bend
     - lid
+    - gem
+    - tin
 schema:
   author:
     - Dvel

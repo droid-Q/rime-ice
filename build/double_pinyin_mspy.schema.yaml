@@ -4,7 +4,7 @@ __build_info:
     default: 1687665522
     default.custom: 0
     double_pinyin_mspy.custom: 0
-    double_pinyin_mspy.schema: 1687844212
+    double_pinyin_mspy.schema: 1688950423
     symbols_caps_v: 1681357855
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -555,6 +555,7 @@ reduce_english_filter:
   idx: 2
   words:
     - nav
+    - uid
     - rug
     - bus
     - ship
@@ -637,6 +638,8 @@ reduce_english_filter:
     - chap
     - bend
     - lid
+    - gem
+    - tin
 schema:
   author:
     - Dvel
