@@ -4,7 +4,7 @@ __build_info:
     default: 1687665522
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1690421014
+    rime_ice.schema: 1690789997
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -56,8 +56,6 @@ engine:
     - "reverse_lookup_translator@liangfen"
     - "lua_translator@unicode"
     - "lua_translator@number_translator"
-grammar:
-  language: "zh-hans-t-essay-bgw"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -639,6 +637,7 @@ reduce_english_filter:
     - lid
     - gem
     - tin
+    - tum
 schema:
   author:
     - Dvel
@@ -651,7 +650,7 @@ schema:
 
   name: "雾凇拼音"
   schema_id: rime_ice
-  version: "2023-06-13"
+  version: "2023-07-28"
 speller:
   algebra:
     - "erase/^hm$/"
@@ -733,7 +732,6 @@ traditionalize:
   option_name: traditionalization
   tips: none
 translator:
-  contextual_suggestions: false
   dictionary: rime_ice
   initial_quality: 1.2
   preedit_format:

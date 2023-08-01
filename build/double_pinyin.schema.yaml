@@ -4,7 +4,7 @@ __build_info:
     default: 1687665522
     default.custom: 0
     double_pinyin.custom: 0
-    double_pinyin.schema: 1690421014
+    double_pinyin.schema: 1690789997
     symbols_caps_v: 1690421014
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -55,8 +55,6 @@ engine:
     - "reverse_lookup_translator@liangfen"
     - "lua_translator@unicode"
     - "lua_translator@number_translator"
-grammar:
-  language: "zh-hans-t-essay-bgw"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -452,6 +450,7 @@ reduce_english_filter:
     - lid
     - gem
     - tin
+    - tum
 schema:
   author:
     - Dvel
@@ -523,7 +522,6 @@ traditionalize:
   option_name: traditionalization
   tips: none
 translator:
-  contextual_suggestions: false
   dictionary: rime_ice
   initial_quality: 1.2
   preedit_format:
