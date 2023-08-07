@@ -4,7 +4,7 @@ __build_info:
     default: 1687665522
     default.custom: 0
     double_pinyin_flypy.custom: 1681796602
-    double_pinyin_flypy.schema: 1690789997
+    double_pinyin_flypy.schema: 1691033549
     symbols_caps_v: 1690421014
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -75,7 +75,7 @@ liangfen:
 melt_eng:
   comment_format:
     - "xform/.*//"
-  dictionary: my_eng
+  dictionary: melt_eng
   enable_sentence: false
   enable_user_dict: false
   initial_quality: 1.1
