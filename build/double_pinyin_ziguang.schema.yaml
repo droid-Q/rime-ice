@@ -4,7 +4,7 @@ __build_info:
     default: 1687665522
     default.custom: 0
     double_pinyin_ziguang.custom: 0
-    double_pinyin_ziguang.schema: 1690789997
+    double_pinyin_ziguang.schema: 1691371542
     symbols_caps_v: 1690421014
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -25,6 +25,7 @@ emoji:
   option_name: emoji
 engine:
   filters:
+    - "lua_filter@corrector"
     - "simplifier@emoji"
     - "simplifier@traditionalize"
     - "lua_filter@autocap_filter"
@@ -520,6 +521,7 @@ traditionalize:
   option_name: traditionalization
   tips: none
 translator:
+  always_show_comments: true
   dictionary: rime_ice
   initial_quality: 1.2
   preedit_format:
@@ -558,3 +560,4 @@ translator:
     - "xform/0(\\w)/$1/"
     - "xform/([nljqxy])v/$1ü/"
   prism: double_pinyin_ziguang
+  spelling_hints: 8
