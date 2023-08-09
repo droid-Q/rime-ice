@@ -1,10 +1,10 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1687665522
+    default: 1691474904
     default.custom: 0
     double_pinyin_flypy.custom: 1681796602
-    double_pinyin_flypy.schema: 1691371542
+    double_pinyin_flypy.schema: 1691474904
     symbols_caps_v: 1690421014
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -471,32 +471,32 @@ speller:
     - "derive/^([jqxy])u$/$1v/"
     - "derive/^([aoe])([ioun])$/$1$1$2/"
     - "xform/^([aoe])(ng)?$/$1$1$2/"
-    - "xform/iu$/ǫ/"
-    - "xform/(.)ei$/$1ᴡ/"
-    - "xform/uan$/ʀ/"
-    - "xform/[uv]e$/ᴛ/"
-    - "xform/un$/ʏ/"
-    - "xform/^sh/ᴜ/"
-    - "xform/^ch/ɪ/"
-    - "xform/^zh/ᴠ/"
-    - "xform/uo$/ᴏ/"
-    - "xform/ie$/ᴘ/"
-    - "xform/i?ong$/s/"
-    - "xform/ing$|uai$/ᴋ/"
-    - "xform/(.)ai$/$1ᴅ/"
-    - "xform/(.)en$/$1ғ/"
-    - "xform/(.)eng$/$1ɢ/"
-    - "xform/[iu]ang$/ʟ/"
-    - "xform/(.)ang$/$1ʜ/"
-    - "xform/ian$/ᴍ/"
-    - "xform/(.)an$/$1ᴊ/"
-    - "xform/(.)ou$/$1ᴢ/"
-    - "xform/[iu]a$/x/"
-    - "xform/iao$/ɴ/"
-    - "xform/(.)ao$/$1ᴄ/"
-    - "xform/ui$/ᴠ/"
-    - "xform/in$/ʙ/"
-    - "xlit/ǫᴡʀᴛʏᴜɪᴏᴘsᴅғɢʜᴊᴋʟᴢxᴄᴠʙɴᴍ/qwrtyuiopsdfghjklzxcvbnm/"
+    - "xform/iu$/Ⓠ/"
+    - "xform/(.)ei$/$1Ⓦ/"
+    - "xform/uan$/Ⓡ/"
+    - "xform/[uv]e$/Ⓣ/"
+    - "xform/un$/Ⓨ/"
+    - "xform/^sh/Ⓤ/"
+    - "xform/^ch/Ⓘ/"
+    - "xform/^zh/Ⓥ/"
+    - "xform/uo$/Ⓞ/"
+    - "xform/ie$/Ⓟ/"
+    - "xform/i?ong$/Ⓢ/"
+    - "xform/ing$|uai$/Ⓚ/"
+    - "xform/(.)ai$/$1Ⓓ/"
+    - "xform/(.)en$/$1Ⓕ/"
+    - "xform/(.)eng$/$1Ⓖ/"
+    - "xform/[iu]ang$/Ⓛ/"
+    - "xform/(.)ang$/$1Ⓗ/"
+    - "xform/ian$/Ⓜ/"
+    - "xform/(.)an$/$1Ⓙ/"
+    - "xform/(.)ou$/$1Ⓩ/"
+    - "xform/[iu]a$/Ⓧ/"
+    - "xform/iao$/Ⓝ/"
+    - "xform/(.)ao$/$1Ⓒ/"
+    - "xform/ui$/Ⓥ/"
+    - "xform/in$/Ⓑ/"
+    - "xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwrtyuiopsdfghjklzxcvbnm/"
     - "abbrev/^(.).+$/$1/"
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   delimiter: " '"

@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1687665522
+    default: 1691474904
     default.custom: 0
 ascii_composer:
   good_old_caps_lock: true
@@ -11,7 +11,7 @@ ascii_composer:
     Control_R: noop
     Shift_L: commit_code
     Shift_R: noop
-config_version: "2023-05-09"
+config_version: "2023-08-07"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -103,6 +103,7 @@ schema_list:
   - schema: double_pinyin
   - schema: double_pinyin_abc
   - schema: double_pinyin_mspy
+  - schema: double_pinyin_sogou
   - schema: double_pinyin_flypy
   - schema: double_pinyin_ziguang
 switcher:

@@ -1,10 +1,10 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1687665522
+    default: 1691474904
     default.custom: 0
     double_pinyin_abc.custom: 0
-    double_pinyin_abc.schema: 1691371542
+    double_pinyin_abc.schema: 1691474904
     symbols_caps_v: 1690421014
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -468,32 +468,32 @@ schema:
 speller:
   algebra:
     - "erase/^xx$/"
-    - "xform/^zh/ᴀ/"
-    - "xform/^ch/ᴇ/"
-    - "xform/^sh/ᴠ/"
-    - "xform/^([aoe].*)$/ᴏ$1/"
-    - "xform/ei$/ǫ/"
-    - "xform/ian$/ᴡ/"
-    - "xform/er$|iu$/ʀ/"
-    - "xform/[iu]ang$/ᴛ/"
-    - "xform/ing$/ʏ/"
-    - "xform/uo$/ᴏ/"
-    - "xform/uan$/ᴘ/"
-    - "xform/i?ong$/s/"
-    - "xform/[iu]a$/ᴅ/"
-    - "xform/en$/ғ/"
-    - "xform/eng$/ɢ/"
-    - "xform/ang$/ʜ/"
-    - "xform/an$/ᴊ/"
-    - "xform/iao$/ᴢ/"
-    - "xform/ao$/ᴋ/"
-    - "xform/in$|uai$/ᴄ/"
-    - "xform/ai$/ʟ/"
-    - "xform/ie$/x/"
-    - "xform/ou$/ʙ/"
-    - "xform/un$/ɴ/"
-    - "xform/[uv]e$|ui$/ᴍ/"
-    - "xlit/ǫᴡᴇʀᴛʏᴏᴘᴀsᴅғɢʜᴊᴋʟᴢxᴄᴠʙɴᴍ/qwertyopasdfghjklzxcvbnm/"
+    - "xform/^zh/Ⓐ/"
+    - "xform/^ch/Ⓔ/"
+    - "xform/^sh/Ⓥ/"
+    - "xform/^([aoe].*)$/Ⓞ$1/"
+    - "xform/ei$/Ⓠ/"
+    - "xform/ian$/Ⓦ/"
+    - "xform/er$|iu$/Ⓡ/"
+    - "xform/[iu]ang$/Ⓣ/"
+    - "xform/ing$/Ⓨ/"
+    - "xform/uo$/Ⓞ/"
+    - "xform/uan$/Ⓟ/"
+    - "xform/i?ong$/Ⓢ/"
+    - "xform/[iu]a$/Ⓓ/"
+    - "xform/en$/Ⓕ/"
+    - "xform/eng$/Ⓖ/"
+    - "xform/ang$/Ⓗ/"
+    - "xform/an$/Ⓙ/"
+    - "xform/iao$/Ⓩ/"
+    - "xform/ao$/Ⓚ/"
+    - "xform/in$|uai$/Ⓒ/"
+    - "xform/ai$/Ⓛ/"
+    - "xform/ie$/Ⓧ/"
+    - "xform/ou$/Ⓑ/"
+    - "xform/un$/Ⓝ/"
+    - "xform/[uv]e$|ui$/Ⓜ/"
+    - "xlit/ⓆⓌⒺⓇⓉⓎⓄⓅⒶⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwertyopasdfghjklzxcvbnm/"
     - "abbrev/^(.).+$/$1/"
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   delimiter: " '"

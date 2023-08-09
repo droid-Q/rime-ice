@@ -1,10 +1,10 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1687665522
+    default: 1691474904
     default.custom: 0
     double_pinyin_ziguang.custom: 0
-    double_pinyin_ziguang.schema: 1691371542
+    double_pinyin_ziguang.schema: 1691474904
     symbols_caps_v: 1690421014
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -469,32 +469,32 @@ speller:
   algebra:
     - "erase/^xx$/"
     - "derive/^([jqxy])u$/$1v/"
-    - "xform/^([aoe].*)$/ᴏ$1/"
-    - "xform/en$/ᴡ/"
-    - "xform/eng$/ᴛ/"
-    - "xform/in$|uai$/ʏ/"
-    - "xform/^zh/ᴜ/"
-    - "xform/^sh/ɪ/"
-    - "xform/uo$/ᴏ/"
-    - "xform/ai$/ᴘ/"
-    - "xform/^ch/ᴀ/"
-    - "xform/[iu]ang$/ɢ/"
-    - "xform/ang$/s/"
-    - "xform/ie$/ᴅ/"
-    - "xform/ian$/ғ/"
-    - "xform/i?ong$/ʜ/"
-    - "xform/er$|iu$/ᴊ/"
-    - "xform/ei$/ᴋ/"
-    - "xform/uan$/ʟ/"
+    - "xform/^([aoe].*)$/Ⓞ$1/"
+    - "xform/en$/Ⓦ/"
+    - "xform/eng$/Ⓣ/"
+    - "xform/in$|uai$/Ⓨ/"
+    - "xform/^zh/Ⓤ/"
+    - "xform/^sh/Ⓘ/"
+    - "xform/uo$/Ⓞ/"
+    - "xform/ai$/Ⓟ/"
+    - "xform/^ch/Ⓐ/"
+    - "xform/[iu]ang$/Ⓖ/"
+    - "xform/ang$/Ⓢ/"
+    - "xform/ie$/Ⓓ/"
+    - "xform/ian$/Ⓕ/"
+    - "xform/i?ong$/Ⓗ/"
+    - "xform/er$|iu$/Ⓙ/"
+    - "xform/ei$/Ⓚ/"
+    - "xform/uan$/Ⓛ/"
     - "xform/ing$/;/"
-    - "xform/ou$/ᴢ/"
-    - "xform/[iu]a$/x/"
-    - "xform/iao$/ʙ/"
-    - "xform/ue$|ui$|ve$/ɴ/"
-    - "xform/un$/ᴍ/"
-    - "xform/ao$/ǫ/"
-    - "xform/an$/ʀ/"
-    - "xlit/ᴡᴛʏᴜɪᴏᴘᴀɢsᴅғʜᴊᴋʟᴢxʙɴᴍǫʀ/wtyuiopagsdfhjklzxbnmqr/"
+    - "xform/ou$/Ⓩ/"
+    - "xform/[iu]a$/Ⓧ/"
+    - "xform/iao$/Ⓑ/"
+    - "xform/ue$|ui$|ve$/Ⓝ/"
+    - "xform/un$/Ⓜ/"
+    - "xform/ao$/Ⓠ/"
+    - "xform/an$/Ⓡ/"
+    - "xlit/ⓌⓉⓎⓊⒾⓄⓅⒶⒼⓈⒹⒻⒽⒿⓀⓁⓏⓍⒷⓃⓂⓆⓇ/wtyuiopagsdfhjklzxbnmqr/"
     - "abbrev/^(.).+$/$1/"
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA;"
   delimiter: " '"
