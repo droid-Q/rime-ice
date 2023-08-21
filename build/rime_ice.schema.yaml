@@ -1,10 +1,10 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1691474904
+    default: 1692350647
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1691474904
+    rime_ice.schema: 1692350647
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -668,7 +668,7 @@ speller:
     - "derive/([zcs])h([aeiu])$/$1$2h/"
     - "derive/^([wghk])ai$/$1ia/"
     - "derive/([qjx])ia$/$1ai/"
-    - "derive/([wtfghkz])ei$/$1ie/"
+    - "derive/([wfghkz])ei$/$1ie/"
     - "derive/([jqx])ie$/$1ei/"
     - "derive/([rtypsdghklzcbnm])ao$/$1oa/"
     - "derive/([ypfm])ou$/$1uo/"

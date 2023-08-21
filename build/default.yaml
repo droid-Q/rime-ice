@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1691474904
+    default: 1692350647
     default.custom: 0
 ascii_composer:
   good_old_caps_lock: true
@@ -117,5 +117,6 @@ switcher:
   option_list_separator: " / "
   save_options:
     - ascii_punct
+    - full_shape
     - traditionalization
     - emoji
