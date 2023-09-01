@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1692350647
+    default: 1693461139
     default.custom: 0
     double_pinyin_mspy.custom: 0
     double_pinyin_mspy.schema: 1691474904
@@ -81,7 +81,7 @@ melt_eng:
   enable_user_dict: false
   initial_quality: 1.1
 menu:
-  page_size: 5
+  page_size: 7
 punctuator:
   full_shape:
     " ": {commit: "　"}

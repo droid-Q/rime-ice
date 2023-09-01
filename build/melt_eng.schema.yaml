@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1692350647
+    default: 1693461139
     default.custom: 0
     melt_eng.custom: 0
     melt_eng.schema: 1692350647
@@ -592,7 +592,7 @@ key_binder:
   select_first_character: bracketleft
   select_last_character: bracketright
 menu:
-  page_size: 5
+  page_size: 7
 punctuator:
   full_shape:
     " ": {commit: "　"}
