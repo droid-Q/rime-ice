@@ -4,7 +4,7 @@ __build_info:
     default: 1693461139
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1692350647
+    rime_ice.schema: 1695602068
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -712,7 +712,7 @@ speller:
 switches:
   - name: ascii_mode
     reset: 0
-    states: ["中", A]
+    states: ["中", "Ａ"]
   - name: ascii_punct
     reset: 0
     states: ["¥", "$"]
