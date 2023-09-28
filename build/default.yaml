@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1693461139
+    default: 1695695503
     default.custom: 0
 ascii_composer:
   good_old_caps_lock: true
@@ -11,7 +11,7 @@ ascii_composer:
     Control_R: noop
     Shift_L: commit_code
     Shift_R: noop
-config_version: "2023-08-07"
+config_version: "2023-09-25"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -100,6 +100,7 @@ recognizer:
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 schema_list:
   - schema: rime_ice
+  - schema: t9
   - schema: double_pinyin
   - schema: double_pinyin_abc
   - schema: double_pinyin_mspy
@@ -117,6 +118,6 @@ switcher:
   option_list_separator: " / "
   save_options:
     - ascii_punct
-    - full_shape
     - traditionalization
     - emoji
+    - full_shape
