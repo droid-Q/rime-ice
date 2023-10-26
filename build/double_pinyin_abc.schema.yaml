@@ -4,7 +4,7 @@ __build_info:
     default: 1695695503
     default.custom: 0
     double_pinyin_abc.custom: 0
-    double_pinyin_abc.schema: 1697336882
+    double_pinyin_abc.schema: 1698147102
     symbols_caps_v: 1692350647
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -363,95 +363,260 @@ recognizer:
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 reduce_english_filter:
   idx: 2
+  mode: custom
   words:
-    - nav
-    - uid
-    - wig
-    - rug
-    - bus
-    - ship
-    - laos
+    - aid
+    - ann
     - bail
+    - bait
     - bam
+    - band
     - bans
+    - bat
+    - bay
+    - bend
+    - bent
+    - benz
     - bib
+    - bid
+    - bien
+    - biz
+    - boc
+    - bop
     - bos
+    - bud
+    - buf
+    - cab
+    - cad
+    - cain
+    - cam
+    - cans
+    - cap
+    - cas
+    - cef
+    - chad
+    - chan
+    - chap
+    - chef
+    - cher
+    - chew
     - chic
+    - chin
+    - chip
     - chit
+    - coup
+    - cum
+    - cunt
+    - cur
     - dab
     - dag
     - dal
-    - dit
-    - dub
-    - dug
-    - fab
-    - gam
-    - ger
-    - gus
-    - hem
-    - hep
-    - hud
-    - kat
-    - lam
-    - lax
-    - lex
-    - lug
-    - lux
-    - moc
-    - mos
-    - mot
-    - mum
-    - nad
-    - nay
-    - nib
-    - nip
-    - pak
-    - pap
-    - pax
-    - rig
-    - rum
-    - sac
-    - sal
-    - sax
-    - sec
-    - shin
-    - sis
-    - ska
-    - slang
-    - sus
-    - tad
-    - taj
-    - tac
-    - tic
-    - yep
-    - yum
-    - fax
-    - cain
-    - key
-    - mob
-    - buy
     - dam
-    - wap
-    - yes
-    - but
-    - put
-    - lag
-    - buf
-    - lip
-    - aid
-    - aim
-    - dig
+    - dent
+    - dew
+    - dial
+    - diet
     - dim
     - din
     - dip
-    - pail
-    - cad
-    - chap
-    - bend
+    - dis
+    - dit
+    - doug
+    - dub
+    - dug
+    - dunn
+    - fab
+    - fax
+    - fob
+    - fog
+    - foul
+    - fur
+    - gag
+    - gail
+    - gain
+    - gal
+    - gam
+    - gaol
+    - ged
+    - gel
+    - ger
+    - guam
+    - gus
+    - gut
+    - hail
+    - ham
+    - hank
+    - hans
+    - hat
+    - hay
+    - heil
+    - heir
+    - hem
+    - hep
+    - hud
+    - hum
+    - hung
+    - hunk
+    - hut
+    - jim
+    - jug
+    - kat
+    - lab
+    - lad
+    - lag
+    - laid
+    - lam
+    - laos
+    - lap
+    - lat
+    - lax
+    - lay
+    - led
+    - leg
+    - lex
+    - liam
+    - lib
     - lid
-    - gem
+    - lied
+    - lien
+    - lies
+    - linn
+    - lip
+    - lit
+    - liz
+    - lob
+    - lug
+    - lund
+    - lung
+    - lux
+    - mag
+    - maid
+    - mann
+    - mar
+    - mat
+    - med
+    - mel
+    - mend
+    - mens
+    - ment
+    - mil
+    - mins
+    - mint
+    - mob
+    - moc
+    - mod
+    - mop
+    - mos
+    - mot
+    - mud
+    - mug
+    - mum
+    - nail
+    - nap
+    - nat
+    - nay
+    - neil
+    - nib
+    - nip
+    - noun
+    - nous
+    - nun
+    - nut
+    - pac
+    - paid
+    - pail
+    - pain
+    - pair
+    - pak
+    - pal
+    - pam
+    - pans
+    - pant
+    - pap
+    - par
+    - pat
+    - paw
+    - pax
+    - pens
+    - pic
+    - pier
+    - pies
+    - pins
+    - pint
+    - pit
+    - pix
+    - pod
+    - pop
+    - pos
+    - pot
+    - pour
+    - pow
+    - pub
+    - rand
+    - rant
+    - rent
+    - rep
+    - res
+    - ret
+    - rex
+    - rib
+    - rid
+    - rig
+    - rim
+    - rub
+    - rug
+    - rum
+    - runs
+    - sac
+    - sail
+    - sal
+    - sam
+    - sans
+    - sap
+    - saw
+    - sax
+    - sew
+    - sham
+    - shaw
+    - shin
+    - sig
+    - sin
+    - sip
+    - sis
+    - suit
+    - sung
+    - suns
+    - sup
+    - sur
+    - sus
+    - tad
+    - tail
+    - taj
+    - tar
+    - tax
+    - tec
+    - ted
+    - tel
+    - ter
+    - tex
+    - tic
+    - tied
+    - tier
+    - ties
+    - tim
     - tin
+    - tit
+    - tour
+    - tout
     - tum
+    - wag
+    - wand
+    - wap
+    - wax
+    - weir
+    - won
+    - yan
+    - yen
 schema:
   author:
     - Dvel
@@ -479,7 +644,7 @@ speller:
     - "xform/ing$/Ⓨ/"
     - "xform/uo$/Ⓞ/"
     - "xform/uan$/Ⓟ/"
-    - "xform/i?ong$/Ⓢ/"
+    - "xform/(.)i?ong$/$1Ⓢ/"
     - "xform/[iu]a$/Ⓓ/"
     - "xform/en$/Ⓕ/"
     - "xform/eng$/Ⓖ/"

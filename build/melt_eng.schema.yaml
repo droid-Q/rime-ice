@@ -4,7 +4,7 @@ __build_info:
     default: 1695695503
     default.custom: 0
     melt_eng.custom: 0
-    melt_eng.schema: 1692350647
+    melt_eng.schema: 1698147102
 algebra_abc:
   - "derive/1([4-7|9])/$1teen/"
   - "derive/11/eleven/"
@@ -77,6 +77,8 @@ algebra_abc:
   - "derive/7/qi/"
   - "derive/8/ba/"
   - "derive/9/jr/"
+  - "derive/\\+/jd/"
+  - "derive/#/jy/"
 algebra_common:
   - "derive/1([4-7|9])/$1teen/"
   - "derive/11/eleven/"
@@ -200,6 +202,8 @@ algebra_double_pinyin:
   - "derive/7/qi/"
   - "derive/8/ba/"
   - "derive/9/jq/"
+  - "derive/\\+/jw/"
+  - "derive/#/jy/"
 algebra_flypy:
   - "derive/1([4-7|9])/$1teen/"
   - "derive/11/eleven/"
@@ -271,6 +275,8 @@ algebra_flypy:
   - "derive/7/qi/"
   - "derive/8/ba/"
   - "derive/9/jq/"
+  - "derive/\\+/jx/"
+  - "derive/#/jk/"
 algebra_mspy:
   - "derive/1([4-7|9])/$1teen/"
   - "derive/11/eleven/"
@@ -343,6 +349,8 @@ algebra_mspy:
   - "derive/7/qi/"
   - "derive/8/ba/"
   - "derive/9/jq/"
+  - "derive/\\+/jw/"
+  - "derive/#/j;/"
 algebra_rime_ice:
   - "derive/1([4-7|9])/$1teen/"
   - "derive/11/eleven/"
@@ -414,6 +422,8 @@ algebra_rime_ice:
   - "derive/7/qi/"
   - "derive/8/ba/"
   - "derive/9/jiu/"
+  - "derive/\\+/jia/"
+  - "derive/#/jing/"
 algebra_sogou:
   - "derive/1([4-7|9])/$1teen/"
   - "derive/11/eleven/"
@@ -486,6 +496,8 @@ algebra_sogou:
   - "derive/7/qi/"
   - "derive/8/ba/"
   - "derive/9/jq/"
+  - "derive/\\+/jw/"
+  - "derive/#/jy/"
 algebra_ziguang:
   - "derive/1([4-7|9])/$1teen/"
   - "derive/11/eleven/"
@@ -558,6 +570,8 @@ algebra_ziguang:
   - "derive/7/qi/"
   - "derive/8/ba/"
   - "derive/9/jj/"
+  - "derive/\\+/jx/"
+  - "derive/#/j;/"
 engine:
   filters:
     - uniquifier
@@ -674,7 +688,7 @@ schema:
   description: "Easy English Nano，只包含少量常用词汇，方便中英文混合输入度方案调用。"
   name: "Easy English Nano"
   schema_id: melt_eng
-  version: "2023-07-30"
+  version: "2023-10-17"
 speller:
   algebra:
     - "derive/1([4-7|9])/$1teen/"
@@ -747,6 +761,8 @@ speller:
     - "derive/7/qi/"
     - "derive/8/ba/"
     - "derive/9/jq/"
+    - "derive/\\+/jx/"
+    - "derive/#/jk/"
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   delimiter: " '"
 switches:
