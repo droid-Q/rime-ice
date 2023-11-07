@@ -4,7 +4,7 @@ __build_info:
     default: 1695695503
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1698147102
+    rime_ice.schema: 1699344631
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -36,6 +36,7 @@ engine:
     - "lua_processor@select_character"
     - ascii_composer
     - recognizer
+    - predictor
     - key_binder
     - speller
     - punctuator
@@ -83,6 +84,10 @@ melt_eng:
   initial_quality: 1.1
 menu:
   page_size: 7
+predictor:
+  db: predict.db
+  max_candidates: 5
+  max_iterations: 1
 punctuator:
   full_shape:
     " ": {commit: "　"}
@@ -893,6 +898,9 @@ switches:
   - name: full_shape
     reset: 0
     states: ["半角", "全角"]
+  - name: prediction
+    reset: 1
+    states: ["关闭预测", "开启预测"]
 traditionalize:
   excluded_types:
     - reverse_lookup
