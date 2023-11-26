@@ -4,7 +4,7 @@ __build_info:
     default: 1695695503
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1699344631
+    rime_ice.schema: 1700990911
     symbols_v: 1681357855
     symbols_v.custom: 0
 custom_phrase:
@@ -806,6 +806,7 @@ reduce_english_filter:
     - tum
     - wag
     - wand
+    - womens
     - wap
     - wax
     - weir
