@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1695695503
+    default: 1701421579
     default.custom: 0
     double_pinyin_flypy.custom: 1692350647
     double_pinyin_flypy.schema: 1700990911
@@ -66,6 +66,17 @@ key_binder:
     - {accept: equal, send: Page_Down, when: has_menu}
     - {accept: "Control+Shift+3", toggle: ascii_punct, when: always}
     - {accept: "Control+Shift+4", toggle: traditionalization, when: always}
+    - {accept: KP_0, send: 0, when: composing}
+    - {accept: KP_1, send: 1, when: composing}
+    - {accept: KP_2, send: 2, when: composing}
+    - {accept: KP_3, send: 3, when: composing}
+    - {accept: KP_4, send: 4, when: composing}
+    - {accept: KP_5, send: 5, when: composing}
+    - {accept: KP_6, send: 6, when: composing}
+    - {accept: KP_7, send: 7, when: composing}
+    - {accept: KP_8, send: 8, when: composing}
+    - {accept: KP_9, send: 9, when: composing}
+    - {accept: KP_Decimal, send: period, when: composing}
   import_preset: default
   select_first_character: bracketleft
   select_last_character: bracketright
