@@ -4,7 +4,7 @@ __build_info:
     default: 1702286878
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1702286878
+    rime_ice.schema: 1704255885
     symbols_v: 1703645079
     symbols_v.custom: 0
 custom_phrase:
@@ -36,7 +36,6 @@ engine:
     - "lua_processor@select_character"
     - ascii_composer
     - recognizer
-    - predictor
     - key_binder
     - speller
     - punctuator
@@ -96,10 +95,6 @@ melt_eng:
   initial_quality: 1.1
 menu:
   page_size: 7
-predictor:
-  db: predict.db
-  max_candidates: 5
-  max_iterations: 1
 punctuator:
   full_shape:
     " ": {commit: "　"}
