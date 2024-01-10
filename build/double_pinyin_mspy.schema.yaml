@@ -4,7 +4,7 @@ __build_info:
     default: 1702286878
     default.custom: 0
     double_pinyin_mspy.custom: 0
-    double_pinyin_mspy.schema: 1702286878
+    double_pinyin_mspy.schema: 1704678589
     symbols_caps_v: 1703645079
     symbols_caps_v.custom: 0
 custom_phrase:
@@ -51,6 +51,7 @@ engine:
     - punct_translator
     - script_translator
     - "lua_translator@date_translator"
+    - "lua_translator@lunar"
     - "table_translator@custom_phrase"
     - "table_translator@melt_eng"
     - "reverse_lookup_translator@liangfen"
@@ -85,6 +86,7 @@ liangfen:
   dictionary: liangfen
   enable_completion: true
   prefix: L
+lunar: lunar
 melt_eng:
   comment_format:
     - "xform/.*//"
