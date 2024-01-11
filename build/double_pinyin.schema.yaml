@@ -4,9 +4,10 @@ __build_info:
     default: 1702286878
     default.custom: 0
     double_pinyin.custom: 0
-    double_pinyin.schema: 1704678589
+    double_pinyin.schema: 1704866774
     symbols_caps_v: 1703645079
     symbols_caps_v.custom: 0
+corrector: "{comment}"
 custom_phrase:
   db_class: stabledb
   dictionary: ""
@@ -585,6 +586,7 @@ reduce_english_filter:
     - rub
     - rug
     - rum
+    - runc
     - runs
     - sac
     - sail
