@@ -4,7 +4,7 @@ __build_info:
     default: 1702286878
     default.custom: 0
     double_pinyin_ziguang.custom: 0
-    double_pinyin_ziguang.schema: 1704866774
+    double_pinyin_ziguang.schema: 1705296741
     symbols_caps_v: 1703645079
     symbols_caps_v.custom: 0
 corrector: "{comment}"
@@ -376,6 +376,7 @@ recognizer:
   import_preset: default
   patterns:
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    gregorian_to_lunar: "^N[0-9]{1,8}"
     number: "^R[0-9]+[.]?[0-9]*"
     punct: "^V([0-9]|10|[A-Za-z]+)$"
     reverse_lookup: "^L[a-z]+$"

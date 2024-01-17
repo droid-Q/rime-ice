@@ -4,7 +4,7 @@ __build_info:
     default: 1702286878
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1704866774
+    rime_ice.schema: 1705296741
     symbols_v: 1703645079
     symbols_v.custom: 0
 corrector: "{comment}"
@@ -566,6 +566,7 @@ recognizer:
   import_preset: default
   patterns:
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    gregorian_to_lunar: "^N[0-9]{1,8}"
     number: "^R[0-9]+[.]?[0-9]*"
     punct: "^v([0-9]|10|[A-Za-z]+)$"
     reverse_lookup: "^u[a-z]+$"
