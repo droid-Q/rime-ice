@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1702286878
+    default: 1705458369
     default.custom: 0
     liangfen.custom: 0
     liangfen.schema: 1680824425
@@ -129,6 +129,7 @@ recognizer:
   patterns:
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
     reverse_lookup: "`[a-z]*$"
+    underscore: "^[A-Za-z]+_.*"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 reverse_lookup:
   dictionary: luna_pinyin

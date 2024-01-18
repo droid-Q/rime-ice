@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1702286878
+    default: 1705458369
     default.custom: 0
     rime_ice.custom: 0
     rime_ice.schema: 1705296741
@@ -570,6 +570,7 @@ recognizer:
     number: "^R[0-9]+[.]?[0-9]*"
     punct: "^v([0-9]|10|[A-Za-z]+)$"
     reverse_lookup: "^u[a-z]+$"
+    underscore: "^[A-Za-z]+_.*"
     unicode: "^U[a-f0-9]+"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 reduce_english_filter:

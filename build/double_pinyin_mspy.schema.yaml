@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1702286878
+    default: 1705458369
     default.custom: 0
     double_pinyin_mspy.custom: 0
     double_pinyin_mspy.schema: 1705296741
@@ -380,6 +380,7 @@ recognizer:
     number: "^R[0-9]+[.]?[0-9]*"
     punct: "^V([0-9]|10|[A-Za-z]+)$"
     reverse_lookup: "^L[a-z]+$"
+    underscore: "^[A-Za-z]+_.*"
     unicode: "^U[a-f0-9]+"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 reduce_english_filter:
