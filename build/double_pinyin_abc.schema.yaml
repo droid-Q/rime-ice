@@ -1,12 +1,13 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1706486538
+    default: 1706598401
     default.custom: 0
     double_pinyin_abc.custom: 0
-    double_pinyin_abc.schema: 1705296741
+    double_pinyin_abc.schema: 1706598401
     symbols_caps_v: 1703645079
     symbols_caps_v.custom: 0
+auto_commit_single_punct: "`"
 corrector: "{comment}"
 custom_phrase:
   db_class: stabledb
@@ -22,6 +23,7 @@ date_translator:
   timestamp: timestamp
   week: week
 emoji:
+  inherit_comment: false
   opencc_config: emoji.json
   option_name: emoji
 engine:
@@ -29,11 +31,14 @@ engine:
     - "lua_filter@corrector"
     - "simplifier@emoji"
     - "simplifier@traditionalize"
+    - "reverse_lookup_filter@radical_reverse_lookup"
+    - "lua_filter@search@radical_pinyin"
     - "lua_filter@autocap_filter"
     - "lua_filter@reduce_english_filter"
     - uniquifier
   processors:
     - "lua_processor@select_character"
+    - "lua_processor@auto_commit_single_punct"
     - ascii_composer
     - recognizer
     - key_binder
@@ -46,6 +51,7 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
+    - "affix_segmentor@radical_lookup"
     - punct_segmentor
     - fallback_segmentor
   translators:
@@ -55,7 +61,7 @@ engine:
     - "lua_translator@lunar"
     - "table_translator@custom_phrase"
     - "table_translator@melt_eng"
-    - "reverse_lookup_translator@liangfen"
+    - "table_translator@radical_lookup"
     - "lua_translator@unicode"
     - "lua_translator@number_translator"
 key_binder:
@@ -83,12 +89,9 @@ key_binder:
     - {accept: KP_9, send: 9, when: composing}
     - {accept: KP_Decimal, send: period, when: composing}
   import_preset: default
+  search: "`"
   select_first_character: bracketleft
   select_last_character: bracketright
-liangfen:
-  dictionary: liangfen
-  enable_completion: true
-  prefix: L
 lunar: lunar
 melt_eng:
   comment_format:
@@ -374,6 +377,18 @@ punctuator:
     Vzmh: ["⒜", "⒝", "⒞", "⒟", "⒠", "⒡", "⒢", "⒣", "⒤", "⒥", "⒦", "⒧", "⒨", "⒩", "⒪", "⒫", "⒬", "⒭", "⒮", "⒯", "⒰", "⒱", "⒲", "⒳", "⒴", "⒵"]
     Vzmq: ["ⓐ", "Ⓐ", "ⓑ", "Ⓑ", "ⓒ", "Ⓒ", "ⓓ", "Ⓓ", "ⓔ", "Ⓔ", "ⓕ", "Ⓕ", "ⓖ", "Ⓖ", "ⓗ", "Ⓗ", "ⓘ", "Ⓘ", "ⓙ", "Ⓙ", "ⓚ", "Ⓚ", "ⓛ", "Ⓛ", "ⓜ", "Ⓜ", "ⓝ", "Ⓝ", "ⓞ", "Ⓞ", "ⓟ", "Ⓟ", "ⓠ", "Ⓠ", "ⓡ", "Ⓡ", "ⓢ", "Ⓢ", "ⓣ", "Ⓣ", "ⓤ", "Ⓤ", "ⓥ", "Ⓥ", "ⓦ", "Ⓦ", "ⓧ", "Ⓧ", "ⓨ", "Ⓨ", "ⓩ", "Ⓩ"]
     Vzy: ["ㄅ", "ㄆ", "ㄇ", "ㄈ", "ㄉ", "ㄊ", "ㄋ", "ㄌ", "ㄍ", "ㄎ", "ㄏ", "ㄐ", "ㄑ", "ㄒ", "ㄓ", "ㄔ", "ㄕ", "ㄖ", "ㄗ", "ㄘ", "ㄙ", "ㄧ", "ㄨ", "ㄩ", "ㄚ", "ㄛ", "ㄜ", "ㄝ", "ㄞ", "ㄟ", "ㄠ", "ㄡ", "ㄢ", "ㄣ", "ㄤ", "ㄥ", "ㄦ", "ㄪ", "ㄫ", "ㄬ", "ㄭ", "ㆠ", "ㆡ", "ㆢ", "ㆣ", "ㆤ", "ㆥ", "ㆦ", "ㆧ", "ㆨ", "ㆩ", "ㆪ", "ㆫ", "ㆬ", "ㆭ", "ㆮ", "ㆯ", "ㆰ", "ㆱ", "ㆲ", "ㆳ", "ㆴ", "ㆵ", "ㆶ", "ㆷ"]
+radical_lookup:
+  comment_format:
+    - "erase/^.*$//"
+  dictionary: radical_pinyin
+  enable_user_dict: false
+  prefix: uU
+  tag: radical_lookup
+  tips: "  〔拆字〕"
+radical_reverse_lookup:
+  dictionary: rime_ice
+  tags:
+    - radical_lookup
 recognizer:
   import_preset: default
   patterns:
@@ -381,7 +396,7 @@ recognizer:
     gregorian_to_lunar: "^N[0-9]{1,8}"
     number: "^R[0-9]+[.]?[0-9]*"
     punct: "^V([0-9]|10|[A-Za-z]+)$"
-    reverse_lookup: "^L[a-z]+$"
+    radical_lookup: "^uU[a-z]+$"
     underscore: "^[A-Za-z]+_.*"
     unicode: "^U[a-f0-9]+"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
@@ -648,12 +663,12 @@ schema:
     - Dvel
   dependencies:
     - melt_eng
-    - liangfen
+    - radical_pinyin
   description: |
-    雾凇拼音 - 智能ABC双拼
+    雾凇拼音 - 智能 ABC 双拼
     https://github.com/iDvel/rime-ice
 
-  name: "智能ABC双拼"
+  name: "智能 ABC 双拼"
   schema_id: double_pinyin_abc
   version: 1
 speller:
@@ -685,29 +700,28 @@ speller:
     - "xform/un$/Ⓝ/"
     - "xform/[uv]e$|ui$/Ⓜ/"
     - "xlit/ⓆⓌⒺⓇⓉⓎⓄⓅⒶⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwertyopasdfghjklzxcvbnm/"
-  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+  alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`"
   delimiter: " '"
 switches:
   - name: ascii_mode
-    reset: 0
     states: ["中", "Ａ"]
   - name: ascii_punct
-    reset: 0
     states: ["¥", "$"]
   - name: traditionalization
-    reset: 0
     states: ["简", "繁"]
   - name: emoji
     reset: 1
     states: ["💀", "😄"]
   - name: full_shape
-    reset: 0
     states: ["半角", "全角"]
+  - abbrev: ["词", "单"]
+    name: single_char
+    states: ["正常", "单字"]
 traditionalize:
-  excluded_types:
-    - reverse_lookup
   opencc_config: s2t.json
   option_name: traditionalization
+  tags:
+    - abc
   tips: none
 translator:
   always_show_comments: true
