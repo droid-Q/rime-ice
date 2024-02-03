@@ -87,6 +87,7 @@ engine:
     - lua_filter@search@radical_pinyin              # 部件拆字辅码
     - lua_filter@autocap_filter                     # 英文自动大写
     - lua_filter@reduce_english_filter              # 降低部分英语单词在候选项的位置
+    - lua_filter@pin_cand_filter                    # 置顶候选项
     - uniquifier                                    # 去重
 
 
@@ -120,12 +121,12 @@ corrector: "{comment}"
 # 正常情况： 输入 rug 得到 「1.rug 2.如果 …… 」
 # 降低之后： 输入 rug 得到 「1.如果 2.rug …… 」
 # 几种模式：
-# all     降低所有 3~4 位长度、前 2~3 位是完整拼音、最后一位是声母的单词
+# all     降低脚本内置的单词（所有 3~4 位长度、前 2~3 位是完整拼音、最后一位是声母），words 作为自定义的额外补充
+# custom  完全自定义，只降低 words 里的
 # none    不降低任何单词，相当于没有启用这个 Lua
-# custom  自定义，只降低 words 里的
 # （匹配的是编码，不是单词）
 reduce_english_filter:
-  mode: custom  # all | none | custom
+  mode: custom  # all | custom | none
   idx: 2        # 降低到第 idx 个位置
   # 自定义的单词列表，示例列表没有降低部分常用单词，如 and cat mail Mac but bad shit ……
   words: [aid, ann,
@@ -146,6 +147,13 @@ reduce_english_filter:
   tad, tail, taj, tar, tax, tec, ted, tel, ter, tex, tic, tied, tier, ties, tim, tin, tit, tour, tout, tum,
   wag, wand, womens, wap, wax, weir, won,
   yan, yen]
+
+
+# Lua 配置: 置顶候选项
+#TODO 文档和示例
+pin_cand_filter:
+  # 格式：编码<Tab>字词1<Space>字词2……
+  - d	的
 
 
 # 主翻译器，拼音
@@ -226,7 +234,7 @@ traditionalize:
   option_name: traditionalization
   opencc_config: s2t.json  # s2t.json | s2hk.json | s2tw.json | s2twp.json
   tips: none               # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
-  tags: [ abc ]            # 限制在 abc tag，不对其他如反查的内容做简繁转换
+  tags: [ abc, number, gregorian_to_lunar ]  # 限制在对应 tag，不对其他如反查的内容做简繁转换
 
 
 # 标点符号
