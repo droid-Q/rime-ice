@@ -4,7 +4,7 @@ __build_info:
     default: 1706598401
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1706598615
+    rime_ice.schema: 1706930474
     symbols_v: 1703645079
     symbols_v.custom: 0
 auto_commit_single_punct: "`"
@@ -36,6 +36,7 @@ engine:
     - "lua_filter@v_filter"
     - "lua_filter@autocap_filter"
     - "lua_filter@reduce_english_filter"
+    - "lua_filter@pin_cand_filter"
     - uniquifier
   processors:
     - "lua_processor@select_character"
@@ -103,6 +104,127 @@ melt_eng:
   initial_quality: 1.1
 menu:
   page_size: 7
+pin_cand_filter:
+  - "q\t去 千"
+  - "w\t我 万 往"
+  - "e\t呃"
+  - "r\t让 人"
+  - "t\t他 她 它 祂"
+  - "y\t与 于"
+  - "o\t哦"
+  - "p\t片 篇"
+  - "a\t啊"
+  - "s\t是 时 使 式"
+  - "d\t的 地 得"
+  - "f\t发 放 分"
+  - "g\t个 各"
+  - "h\t和 或"
+  - "j\t及 将 即 既 继"
+  - "k\t可"
+  - "l\t了 啦 喽 嘞"
+  - "z\t在 再 自"
+  - "x\t想 像 向"
+  - "c\t才 从"
+  - "b\t吧 把 呗 百"
+  - "n\t那 哪 拿 呐"
+  - "m\t吗 嘛 呣"
+  - "qing\t请"
+  - "qu\t去"
+  - "wo\t我"
+  - "wei\t为"
+  - "er\t而 儿 二"
+  - "en\t嗯"
+  - "rang\t让"
+  - "ta\t他 她 它 祂"
+  - "tai\t太"
+  - "tong\t同"
+  - "yu\t与 于"
+  - "you\t有 🈶 又 由"
+  - "yao\t要"
+  - "ye\t也"
+  - "shi\t是 时 使 式"
+  - "de\t的 地 得"
+  - "dan\t但"
+  - "dao\t到 倒"
+  - "dian\t点"
+  - "dang\t当"
+  - "dui\t对"
+  - "fa\t发"
+  - "ge\t个 各"
+  - "gang\t刚"
+  - "he\t和"
+  - "huo\t或"
+  - "hui\t会"
+  - "hai\t还"
+  - "hao\t好"
+  - "ji\t及 即 既"
+  - "jiu\t就"
+  - "jiang\t将"
+  - "ke\t可"
+  - "kan\t看"
+  - "kai\t开"
+  - "le\t了"
+  - "la\t啦 拉"
+  - "lai\t来"
+  - "li\t里"
+  - "zai\t在 再"
+  - "zhi\t只"
+  - "zhe\t这 着"
+  - "zhen\t真"
+  - "zui\t最"
+  - "zheng\t正"
+  - "zuo\t做 坐 左"
+  - "ze\t则"
+  - "xiang\t想 像 向"
+  - "xian\t先"
+  - "xia\t下"
+  - "xing\t行"
+  - "cai\t才"
+  - "cong\t从"
+  - "chu\t出"
+  - "ba\t吧 把"
+  - "bu\t不"
+  - "bing\t并"
+  - "bei\t被"
+  - "bie\t别"
+  - "bi\t比"
+  - "bing\t并"
+  - "na\t那 哪 拿"
+  - "ni\t你"
+  - "ma\t吗 嘛 妈"
+  - "mei\t没"
+  - "ta men\t他们 她们 它们"
+  - "tm\t他们 她们 它们"
+  - "ta de\t他的 她的 它的"
+  - "ta men de\t他们的 她们的 它们的"
+  - "na er\t那儿 哪儿"
+  - "na ge\t那个 哪个"
+  - "ng\t那个 哪个"
+  - "na xie\t那些 哪些"
+  - "na li\t那里 哪里"
+  - "na bian\t那边 哪边"
+  - "na bian er\t那边儿 哪边儿"
+  - "na wei\t那位 哪位"
+  - "zh\t这"
+  - "dd\t等等"
+  - "dddd\t等等等等"
+  - "gg\t刚刚"
+  - "cgg\t才刚刚"
+  - "zd\t知道"
+  - "bzd\t不知道"
+  - "ww\t往往"
+  - "hh\t哈哈"
+  - "kk\t看看"
+  - "cc\t常常"
+  - "xx\t想想 🤔 想象"
+  - "yw\t因为"
+  - "sm\t什么"
+  - "wsm\t为什么"
+  - "sbs\t是不是"
+  - "msm\t没什么"
+  - "smd\t什么的"
+  - "sms\t什么是"
+  - "sma\t什么啊"
 punctuator:
   full_shape:
     " ": {commit: "　"}
@@ -859,7 +981,7 @@ schema:
 
   name: "雾凇拼音"
   schema_id: rime_ice
-  version: "2024-01-29"
+  version: "2024-02-01"
 speller:
   algebra:
     - "erase/^hm$/"
@@ -937,6 +1059,8 @@ traditionalize:
   option_name: traditionalization
   tags:
     - abc
+    - number
+    - gregorian_to_lunar
   tips: none
 translator:
   always_show_comments: true
