@@ -1,7 +1,7 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1706598401
+    default: 1707467842
     default.custom: 0
 ascii_composer:
   good_old_caps_lock: true
@@ -11,7 +11,7 @@ ascii_composer:
     Control_R: noop
     Shift_L: commit_code
     Shift_R: noop
-config_version: "2024-01-29"
+config_version: "2024-02-05"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -136,4 +136,4 @@ switcher:
     - traditionalization
     - emoji
     - full_shape
-    - single_char
+    - search_single_char

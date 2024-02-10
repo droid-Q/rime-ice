@@ -1,13 +1,22 @@
 __build_info:
   rime_version: 1.8.5
   timestamps:
-    default: 1706598401
+    default: 1707467842
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1706930474
+    rime_ice.schema: 1707467842
     symbols_v: 1703645079
     symbols_v.custom: 0
 auto_commit_single_punct: "`"
+cn_en:
+  comment_format:
+    - "xform/^.+$//"
+  db_class: stabledb
+  dictionary: ""
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: 1.1
+  user_dict: "en_dicts/cn_en"
 corrector: "{comment}"
 custom_phrase:
   db_class: stabledb
@@ -37,11 +46,12 @@ engine:
     - "lua_filter@autocap_filter"
     - "lua_filter@reduce_english_filter"
     - "lua_filter@pin_cand_filter"
+    - "lua_filter@long_word_filter"
     - uniquifier
   processors:
     - "lua_processor@select_character"
-    - "lua_processor@auto_commit_single_punct"
     - ascii_composer
+    - "lua_processor@auto_commit_single_punct"
     - recognizer
     - key_binder
     - speller
@@ -63,9 +73,11 @@ engine:
     - "lua_translator@lunar"
     - "table_translator@custom_phrase"
     - "table_translator@melt_eng"
+    - "table_translator@cn_en"
     - "table_translator@radical_lookup"
     - "lua_translator@unicode"
     - "lua_translator@number_translator"
+    - "lua_translator@force_gc"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -94,6 +106,9 @@ key_binder:
   search: "`"
   select_first_character: bracketleft
   select_last_character: bracketright
+long_word_filter:
+  count: 2
+  idx: 4
 lunar: nl
 melt_eng:
   comment_format:
@@ -107,20 +122,20 @@ menu:
 pin_cand_filter:
   - "q\t去 千"
   - "w\t我 万 往"
-  - "e\t呃"
+  - "e\t呃 🤔"
   - "r\t让 人"
   - "t\t他 她 它 祂"
   - "y\t与 于"
-  - "o\t哦"
+  - "o\t哦 😮"
   - "p\t片 篇"
-  - "a\t啊"
+  - "a\t啊 😲 😦 😧"
   - "s\t是 时 使 式"
-  - "d\t的 地 得"
+  - "d\t的 地 得 🉐"
   - "f\t发 放 分"
   - "g\t个 各"
   - "h\t和 或"
   - "j\t及 将 即 既 继"
-  - "k\t可"
+  - "k\t可 🉑"
   - "l\t了 啦 喽 嘞"
   - "z\t在 再 自"
   - "x\t想 像 向"
@@ -132,7 +147,7 @@ pin_cand_filter:
   - "qu\t去"
   - "wo\t我"
   - "wei\t为"
-  - "er\t而 儿 二"
+  - "er\t而 儿 二 2️⃣"
   - "en\t嗯"
   - "rang\t让"
   - "ta\t他 她 它 祂"
@@ -143,12 +158,16 @@ pin_cand_filter:
   - "yao\t要"
   - "ye\t也"
   - "shi\t是 时 使 式"
-  - "de\t的 地 得"
+  - "suo\t所"
+  - "shang\t上 ⬆️ ↑"
+  - "shuo\t说"
+  - "de\t的 地 得 🉐"
   - "dan\t但"
+  - "dou\t都"
   - "dao\t到 倒"
-  - "dian\t点"
+  - "dian\t点 · 丶"
   - "dang\t当"
-  - "dui\t对"
+  - "dui\t对 ⭕ ✅ ✔"
   - "fa\t发"
   - "ge\t个 各"
   - "gang\t刚"
@@ -156,12 +175,12 @@ pin_cand_filter:
   - "huo\t或"
   - "hui\t会"
   - "hai\t还"
-  - "hao\t好"
+  - "hao\t好 👌 🙆‍♂️ 🙆‍♀️"
   - "ji\t及 即 既"
   - "jiu\t就"
   - "jiang\t将"
-  - "ke\t可"
-  - "kan\t看"
+  - "ke\t可 🉑"
+  - "kan\t看 👀"
   - "kai\t开"
   - "le\t了"
   - "la\t啦 拉"
@@ -173,11 +192,11 @@ pin_cand_filter:
   - "zhen\t真"
   - "zui\t最"
   - "zheng\t正"
-  - "zuo\t做 坐 左"
+  - "zuo\t做 坐 左 ⬅️ ←"
   - "ze\t则"
   - "xiang\t想 像 向"
   - "xian\t先"
-  - "xia\t下"
+  - "xia\t下 ⬇️ ↓"
   - "xing\t行"
   - "cai\t才"
   - "cong\t从"
@@ -189,17 +208,19 @@ pin_cand_filter:
   - "bie\t别"
   - "bi\t比"
   - "bing\t并"
-  - "na\t那 哪 拿"
+  - "na\t那 哪 拿 呐"
   - "ni\t你"
   - "ma\t吗 嘛 妈"
   - "mei\t没"
+  - "mai\t买 卖"
   - "ta men\t他们 她们 它们"
   - "tm\t他们 她们 它们"
   - "ta de\t他的 她的 它的"
+  - "td\t他的 她的 它的"
   - "ta men de\t他们的 她们的 它们的"
   - "na er\t那儿 哪儿"
   - "na ge\t那个 哪个"
-  - "ng\t那个 哪个"
+  - "ng\t那个 哪个 拿个"
   - "na xie\t那些 哪些"
   - "na li\t那里 哪里"
   - "na bian\t那边 哪边"
@@ -737,6 +758,9 @@ reduce_english_filter:
     - bos
     - bud
     - buf
+    - bach
+    - bench
+    - bush
     - cab
     - cad
     - cain
@@ -759,6 +783,7 @@ reduce_english_filter:
     - cum
     - cunt
     - cur
+    - couch
     - dab
     - dag
     - dal
@@ -809,6 +834,7 @@ reduce_english_filter:
     - hung
     - hunk
     - hut
+    - hush
     - jim
     - jug
     - kat
@@ -840,6 +866,9 @@ reduce_english_filter:
     - lund
     - lung
     - lux
+    - lash
+    - loch
+    - lush
     - mag
     - maid
     - mann
@@ -861,7 +890,7 @@ reduce_english_filter:
     - mud
     - mug
     - mum
-    - nail
+    - mesh
     - nap
     - nat
     - nay
@@ -872,6 +901,8 @@ reduce_english_filter:
     - nous
     - nun
     - nut
+    - nail
+    - nash
     - pac
     - paid
     - pail
@@ -902,6 +933,8 @@ reduce_english_filter:
     - pour
     - pow
     - pub
+    - pinch
+    - pouch
     - rand
     - rant
     - rent
@@ -918,6 +951,7 @@ reduce_english_filter:
     - rum
     - runc
     - runs
+    - ranch
     - sac
     - sail
     - sal
@@ -969,6 +1003,7 @@ reduce_english_filter:
     - won
     - yan
     - yen
+    - zach
 schema:
   author:
     - Dvel
@@ -981,7 +1016,7 @@ schema:
 
   name: "雾凇拼音"
   schema_id: rime_ice
-  version: "2024-02-01"
+  version: "2024-02-06"
 speller:
   algebra:
     - "erase/^hm$/"
@@ -990,9 +1025,9 @@ speller:
     - "erase/^ng$/"
     - "abbrev/^([a-z]).+$/$1/"
     - "abbrev/^([zcs]h).+$/$1/"
-    - "derive/^([nl])ue$/$1ve/"
     - "derive/^([nl])ve$/$1ue/"
     - "derive/^([jqxy])u/$1v/"
+    - "derive/^([nl])ue$/$1ve/"
     - "derive/^([jqxy])v/$1u/"
     - "derive/([zcs])h(a|e|i|u|ai|ei|an|en|ou|uo|ua|un|ui|uan|uai|uang|ang|eng|ong)$/h$1$2/"
     - "derive/([zcs])h([aeiu])$/$1$2h/"
@@ -1052,7 +1087,7 @@ switches:
   - name: full_shape
     states: ["半角", "全角"]
   - abbrev: ["词", "单"]
-    name: single_char
+    name: search_single_char
     states: ["正常", "单字"]
 traditionalize:
   opencc_config: s2t.json
