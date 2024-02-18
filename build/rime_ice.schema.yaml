@@ -4,7 +4,7 @@ __build_info:
     default: 1707467842
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1707467842
+    rime_ice.schema: 1708170328
     symbols_v: 1703645079
     symbols_v.custom: 0
 auto_commit_single_punct: "`"
@@ -15,7 +15,7 @@ cn_en:
   dictionary: ""
   enable_completion: true
   enable_sentence: false
-  initial_quality: 1.1
+  initial_quality: 0.5
   user_dict: "en_dicts/cn_en"
 corrector: "{comment}"
 custom_phrase:
@@ -38,15 +38,15 @@ emoji:
 engine:
   filters:
     - "lua_filter@corrector"
-    - "simplifier@emoji"
-    - "simplifier@traditionalize"
     - "reverse_lookup_filter@radical_reverse_lookup"
     - "lua_filter@search@radical_pinyin"
-    - "lua_filter@v_filter"
     - "lua_filter@autocap_filter"
-    - "lua_filter@reduce_english_filter"
+    - "lua_filter@v_filter"
     - "lua_filter@pin_cand_filter"
     - "lua_filter@long_word_filter"
+    - "simplifier@emoji"
+    - "simplifier@traditionalize"
+    - "lua_filter@reduce_english_filter"
     - uniquifier
   processors:
     - "lua_processor@select_character"
@@ -122,20 +122,20 @@ menu:
 pin_cand_filter:
   - "q\t去 千"
   - "w\t我 万 往"
-  - "e\t呃 🤔"
+  - "e\t呃"
   - "r\t让 人"
   - "t\t他 她 它 祂"
   - "y\t与 于"
-  - "o\t哦 😮"
+  - "o\t哦"
   - "p\t片 篇"
-  - "a\t啊 😲 😦 😧"
+  - "a\t啊"
   - "s\t是 时 使 式"
-  - "d\t的 地 得 🉐"
+  - "d\t的 地 得"
   - "f\t发 放 分"
   - "g\t个 各"
   - "h\t和 或"
   - "j\t及 将 即 既 继"
-  - "k\t可 🉑"
+  - "k\t可"
   - "l\t了 啦 喽 嘞"
   - "z\t在 再 自"
   - "x\t想 像 向"
@@ -147,27 +147,27 @@ pin_cand_filter:
   - "qu\t去"
   - "wo\t我"
   - "wei\t为"
-  - "er\t而 儿 二 2️⃣"
+  - "er\t而 儿 二"
   - "en\t嗯"
   - "rang\t让"
   - "ta\t他 她 它 祂"
   - "tai\t太"
   - "tong\t同"
   - "yu\t与 于"
-  - "you\t有 🈶 又 由"
+  - "you\t有 又 由"
   - "yao\t要"
   - "ye\t也"
   - "shi\t是 时 使 式"
   - "suo\t所"
-  - "shang\t上 ⬆️ ↑"
+  - "shang\t上"
   - "shuo\t说"
-  - "de\t的 地 得 🉐"
+  - "de\t的 地 得"
   - "dan\t但"
   - "dou\t都"
   - "dao\t到 倒"
-  - "dian\t点 · 丶"
+  - "dian\t点"
   - "dang\t当"
-  - "dui\t对 ⭕ ✅ ✔"
+  - "dui\t对"
   - "fa\t发"
   - "ge\t个 各"
   - "gang\t刚"
@@ -175,12 +175,12 @@ pin_cand_filter:
   - "huo\t或"
   - "hui\t会"
   - "hai\t还"
-  - "hao\t好 👌 🙆‍♂️ 🙆‍♀️"
+  - "hao\t好"
   - "ji\t及 即 既"
   - "jiu\t就"
   - "jiang\t将"
-  - "ke\t可 🉑"
-  - "kan\t看 👀"
+  - "ke\t可"
+  - "kan\t看"
   - "kai\t开"
   - "le\t了"
   - "la\t啦 拉"
@@ -192,11 +192,11 @@ pin_cand_filter:
   - "zhen\t真"
   - "zui\t最"
   - "zheng\t正"
-  - "zuo\t做 坐 左 ⬅️ ←"
+  - "zuo\t做 坐 左"
   - "ze\t则"
   - "xiang\t想 像 向"
   - "xian\t先"
-  - "xia\t下 ⬇️ ↓"
+  - "xia\t下"
   - "xing\t行"
   - "cai\t才"
   - "cong\t从"
@@ -237,7 +237,7 @@ pin_cand_filter:
   - "hh\t哈哈"
   - "kk\t看看"
   - "cc\t常常"
-  - "xx\t想想 🤔 想象"
+  - "xx\t想想 想象"
   - "yw\t因为"
   - "sm\t什么"
   - "wsm\t为什么"
@@ -1016,7 +1016,7 @@ schema:
 
   name: "雾凇拼音"
   schema_id: rime_ice
-  version: "2024-02-06"
+  version: "2024-02-11"
 speller:
   algebra:
     - "erase/^hm$/"

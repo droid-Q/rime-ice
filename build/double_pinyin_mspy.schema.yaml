@@ -4,7 +4,7 @@ __build_info:
     default: 1707467842
     default.custom: 0
     double_pinyin_mspy.custom: 0
-    double_pinyin_mspy.schema: 1707467842
+    double_pinyin_mspy.schema: 1708170328
     symbols_caps_v: 1703645079
     symbols_caps_v.custom: 0
 auto_commit_single_punct: "`"
@@ -15,7 +15,7 @@ cn_en:
   dictionary: ""
   enable_completion: true
   enable_sentence: false
-  initial_quality: 1.1
+  initial_quality: 0.5
   user_dict: "en_dicts/cn_en_mspy"
 corrector: "{comment}"
 custom_phrase:
@@ -38,13 +38,13 @@ emoji:
 engine:
   filters:
     - "lua_filter@corrector"
-    - "simplifier@emoji"
-    - "simplifier@traditionalize"
     - "reverse_lookup_filter@radical_reverse_lookup"
     - "lua_filter@search@radical_pinyin"
     - "lua_filter@autocap_filter"
-    - "lua_filter@reduce_english_filter"
     - "lua_filter@pin_cand_filter"
+    - "simplifier@emoji"
+    - "simplifier@traditionalize"
+    - "lua_filter@reduce_english_filter"
     - uniquifier
   processors:
     - "lua_processor@select_character"
