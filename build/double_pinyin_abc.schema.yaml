@@ -1,10 +1,10 @@
 __build_info:
-  rime_version: 1.8.5
+  rime_version: 1.10.0
   timestamps:
     default: 1707467842
     default.custom: 0
     double_pinyin_abc.custom: 0
-    double_pinyin_abc.schema: 1708170328
+    double_pinyin_abc.schema: 1708593740
     symbols_caps_v: 1703645079
     symbols_caps_v.custom: 0
 auto_commit_single_punct: "`"
