@@ -4,10 +4,9 @@ __build_info:
     default: 1707467842
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1708593740
+    rime_ice.schema: 1708906373
     symbols_v: 1703645079
     symbols_v.custom: 0
-auto_commit_single_punct: "`"
 cn_en:
   comment_format:
     - "xform/^.+$//"
@@ -51,7 +50,6 @@ engine:
   processors:
     - "lua_processor@select_character"
     - ascii_composer
-    - "lua_processor@auto_commit_single_punct"
     - recognizer
     - key_binder
     - speller
@@ -201,7 +199,7 @@ pin_cand_filter:
   - "cai\t才"
   - "cong\t从"
   - "chu\t出"
-  - "ba\t吧 把"
+  - "ba\t把 吧"
   - "bu\t不"
   - "bing\t并"
   - "bei\t被"
@@ -213,6 +211,7 @@ pin_cand_filter:
   - "ma\t吗 嘛 妈"
   - "mei\t没"
   - "mai\t买 卖"
+  - "reng\t仍 扔"
   - "ta men\t他们 她们 它们"
   - "tm\t他们 她们 它们"
   - "ta de\t他的 她的 它的"
@@ -1017,7 +1016,7 @@ schema:
 
   name: "雾凇拼音"
   schema_id: rime_ice
-  version: "2024-02-11"
+  version: "2024-02-25"
 speller:
   algebra:
     - "erase/^hm$/"
@@ -1033,13 +1032,10 @@ speller:
     - "derive/([zcs])h(a|e|i|u|ai|ei|an|en|ou|uo|ua|un|ui|uan|uai|uang|ang|eng|ong)$/h$1$2/"
     - "derive/([zcs])h([aeiu])$/$1$2h/"
     - "derive/^([wghk])ai$/$1ia/"
-    - "derive/([qjx])ia$/$1ai/"
     - "derive/([wfghkz])ei$/$1ie/"
     - "derive/([jqx])ie$/$1ei/"
     - "derive/([rtypsdghklzcbnm])ao$/$1oa/"
     - "derive/([ypfm])ou$/$1uo/"
-    - "derive/([wrtypsdfghklzcbnm])an$/$1na/"
-    - "derive/([wrpsdfghklzcbnm])en$/$1ne/"
     - "derive/([wrtypsdfghklzcbnm])ang$/$1nag/"
     - "derive/([wrtypsdfghklzcbnm])ang$/$1agn/"
     - "derive/([wrtpsdfghklzcbnm])eng$/$1neg/"
@@ -1052,14 +1048,11 @@ speller:
     - "derive/([qtpdjlxbnm])iao$/$1oia/"
     - "derive/([rtsghkzc])ui$/$1iu/"
     - "derive/([qjlxnm])iu$/$1ui/"
-    - "derive/([qtpdjlxbnm])ian$/$1ain/"
-    - "derive/([qypjlxbnm])in$/$1ni/"
     - "derive/([qjlxn])iang$/$1aing/"
     - "derive/([qjlxn])iang$/$1inag/"
     - "derive/([g|k|h|zh|sh])ua$/$1au/"
     - "derive/([g|h|k|zh|ch|sh])uai$/$1aui/"
     - "derive/([qrtysdghjklzxcn])uan$/$1aun/"
-    - "derive/([qrtysdghjklzxc])un$/$1nu/"
     - "derive/([nlyjqx])ue$/$1eu/"
     - "derive/([g|h|k|zh|ch|sh])uang$/$1aung/"
     - "derive/([g|h|k|zh|ch|sh])uang$/$1uagn/"
@@ -1075,6 +1068,7 @@ speller:
     - "derive/([qwrtypsdfghjklzxcbnm])([aeio])ng$/$1ng/"
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`"
   delimiter: " '"
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
 switches:
   - name: ascii_mode
     states: ["中", "Ａ"]
