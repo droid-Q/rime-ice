@@ -4,10 +4,9 @@ __build_info:
     default: 1707467842
     default.custom: 0
     double_pinyin.custom: 0
-    double_pinyin.schema: 1708593740
+    double_pinyin.schema: 1708906373
     symbols_caps_v: 1703645079
     symbols_caps_v.custom: 0
-auto_commit_single_punct: "`"
 cn_en:
   comment_format:
     - "xform/^.+$//"
@@ -49,7 +48,6 @@ engine:
   processors:
     - "lua_processor@select_character"
     - ascii_composer
-    - "lua_processor@auto_commit_single_punct"
     - recognizer
     - key_binder
     - speller
@@ -732,6 +730,7 @@ speller:
     - "xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⓂⒿⒸⓀⓁⓏⓍⓋⒷⓃ/qwrtyuiopsdfghmjcklzxvbn/"
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`"
   delimiter: " '"
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
 switches:
   - name: ascii_mode
     states: ["中", "Ａ"]
