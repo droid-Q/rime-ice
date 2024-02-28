@@ -4,7 +4,7 @@ __build_info:
     default: 1707467842
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1708906373
+    rime_ice.schema: 1709081932
     symbols_v: 1703645079
     symbols_v.custom: 0
 cn_en:
@@ -38,13 +38,13 @@ engine:
   filters:
     - "lua_filter@corrector"
     - "reverse_lookup_filter@radical_reverse_lookup"
-    - "lua_filter@search@radical_pinyin"
     - "lua_filter@autocap_filter"
     - "lua_filter@v_filter"
     - "lua_filter@pin_cand_filter"
     - "lua_filter@long_word_filter"
     - "simplifier@emoji"
     - "simplifier@traditionalize"
+    - "lua_filter@search@radical_pinyin"
     - "lua_filter@reduce_english_filter"
     - uniquifier
   processors:
