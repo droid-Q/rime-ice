@@ -1,8 +1,8 @@
 __build_info:
-  rime_version: 1.10.0
+  rime_version: 1.8.5
   timestamps:
     squirrel: 1702286878
-    squirrel.custom: 1709081932
+    squirrel.custom: 1709535559
 app_options:
   com.coteditor.CotEditor:
     ascii_mode: true
@@ -85,7 +85,7 @@ style:
   inline_preedit: true
   label_font_point: 18
   line_spacing: 5
-  mutual_exclusive: ture
+  mutual_exclusive: true
   shadow_size: 5
   spacing: 10
   text_orientation: horizontal
