@@ -14,7 +14,7 @@
 # 转化应当大写的单词
 ---
 name: en
-version: "2024-04-10"
+version: "2024-04-19"
 sort: by_weight
 ...
 # +_+
@@ -48,6 +48,8 @@ abigail	abigail
 abilities	abilities
 ability	ability
 # abit	abit
+ablate	ablate
+ablation	ablation
 able	able
 # abn	abn
 abnormal	abnormal
@@ -2336,7 +2338,9 @@ braille	braille
 brain	brain
 brains	brains
 brake	brake
+braked	braked
 brakes	brakes
+braking	braking
 branch	branch
 branches	branches
 brand	brand
@@ -6617,6 +6621,8 @@ evangelical	evangelical
 Evans	Evans
 Evansville	Evansville
 evaporate	evaporate
+evaporated	evaporated
+evaporation	evaporation
 eve	eve
 Evelyn	Evelyn
 even	even
@@ -6701,6 +6707,7 @@ excitement	excitement
 exciting	exciting
 # excl	excl
 exclaim	exclaim
+exclaimed	exclaimed
 exclamation	exclamation
 exclude	exclude
 excluded	excluded
@@ -6718,10 +6725,12 @@ exec	exec
 executable	executable
 execute	execute
 executed	executed
+executes	executes
 executing	executing
 execution	execution
 executive	executive
 executives	executives
+executor	executor
 exemplary	exemplary
 exemplify	exemplify
 exempt	exempt
@@ -7088,6 +7097,7 @@ feelings	feelings
 feels	feels
 fees	fees
 feet	feet
+feign	feign
 Felix	Felix
 fell	fell
 fellow	fellow
@@ -9182,6 +9192,7 @@ ICANN	ICANN
 # icc	icc
 ice	ice
 ice cream	icecream
+iceberg	iceberg
 Iceland	Iceland
 Icelandic	Icelandic
 # ich	ich
@@ -9285,7 +9296,6 @@ imaging	imaging
 IMAP	IMAP
 # imc	imc
 IMDb	IMDb
-# imf	imf
 img	img
 imitate	imitate
 imitation	imitation
@@ -9732,6 +9742,13 @@ interaction	interaction
 interactions	interactions
 interactive	interactive
 intercept	intercept
+intercepted	intercepted
+intercepting	intercepting
+interception	interception
+interceptions	interceptions
+interceptive	interceptive
+interceptor	interceptor
+intercepts	intercepts
 interchange	interchange
 interconnect	interconnect
 interconnection	interconnection
@@ -13346,6 +13363,8 @@ overcoming	overcoming
 overdose	overdose
 overdrive	overdrive
 overestimate	overestimate
+overfit	overfit
+overfitting	overfitting
 overflow	overflow
 overhang	overhang
 overhaul	overhaul
