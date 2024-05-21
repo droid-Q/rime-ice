@@ -1,10 +1,10 @@
 __build_info:
-  rime_version: 1.10.0
+  rime_version: 1.11.0
   timestamps:
     default: 1707467842
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1710322080
+    rime_ice.schema: 1714009858
     symbols_v: 1703645079
     symbols_v.custom: 0
 cn_en:
@@ -42,10 +42,10 @@ engine:
     - "lua_filter@v_filter"
     - "lua_filter@pin_cand_filter"
     - "lua_filter@long_word_filter"
+    - "lua_filter@reduce_english_filter"
     - "simplifier@emoji"
     - "simplifier@traditionalize"
     - "lua_filter@search@radical_pinyin"
-    - "lua_filter@reduce_english_filter"
     - uniquifier
   processors:
     - "lua_processor@select_character"
@@ -1094,6 +1094,9 @@ traditionalize:
   tips: none
 translator:
   always_show_comments: true
+  comment_format:
+    - "xform/^/［/"
+    - "xform/$/］/"
   dictionary: rime_ice
   initial_quality: 1.2
   preedit_format:

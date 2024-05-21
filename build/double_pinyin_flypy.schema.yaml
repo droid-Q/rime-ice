@@ -1,10 +1,10 @@
 __build_info:
-  rime_version: 1.10.0
+  rime_version: 1.11.0
   timestamps:
     default: 1707467842
     default.custom: 0
-    double_pinyin_flypy.custom: 1692350647
-    double_pinyin_flypy.schema: 1709081932
+    double_pinyin_flypy.custom: 1712627989
+    double_pinyin_flypy.schema: 1714956027
     symbols_caps_v: 1703645079
     symbols_caps_v.custom: 0
 cn_en:
@@ -38,11 +38,12 @@ engine:
   filters:
     - "lua_filter@corrector"
     - "reverse_lookup_filter@radical_reverse_lookup"
+    - "lua_filter@search@radical_pinyin"
     - "lua_filter@autocap_filter"
     - "lua_filter@pin_cand_filter"
+    - "lua_filter@long_word_filter"
     - "simplifier@emoji"
     - "simplifier@traditionalize"
-    - "lua_filter@search@radical_pinyin"
     - "lua_filter@reduce_english_filter"
     - uniquifier
   processors:
@@ -102,6 +103,9 @@ key_binder:
   search: "`"
   select_first_character: bracketleft
   select_last_character: bracketright
+long_word_filter:
+  count: 10
+  idx: 1
 lunar: lunar
 melt_eng:
   comment_format:
@@ -698,35 +702,34 @@ schema:
   version: 1
 speller:
   algebra:
-    - "erase/^xx$/"
     - "derive/^([jqxy])u$/$1v/"
     - "derive/^([aoe])([ioun])$/$1$1$2/"
-    - "xform/^([aoe])(ng)?$/$1$1$2/"
-    - "xform/iu$/Ⓠ/"
-    - "xform/(.)ei$/$1Ⓦ/"
-    - "xform/uan$/Ⓡ/"
-    - "xform/[uv]e$/Ⓣ/"
-    - "xform/un$/Ⓨ/"
-    - "xform/^sh/Ⓤ/"
-    - "xform/^ch/Ⓘ/"
-    - "xform/^zh/Ⓥ/"
-    - "xform/uo$/Ⓞ/"
-    - "xform/ie$/Ⓟ/"
-    - "xform/(.)i?ong$/$1Ⓢ/"
-    - "xform/ing$|uai$/Ⓚ/"
-    - "xform/(.)ai$/$1Ⓓ/"
-    - "xform/(.)en$/$1Ⓕ/"
-    - "xform/(.)eng$/$1Ⓖ/"
-    - "xform/[iu]ang$/Ⓛ/"
-    - "xform/(.)ang$/$1Ⓗ/"
-    - "xform/ian$/Ⓜ/"
-    - "xform/(.)an$/$1Ⓙ/"
-    - "xform/(.)ou$/$1Ⓩ/"
-    - "xform/[iu]a$/Ⓧ/"
-    - "xform/iao$/Ⓝ/"
-    - "xform/(.)ao$/$1Ⓒ/"
-    - "xform/ui$/Ⓥ/"
-    - "xform/in$/Ⓑ/"
+    - "derive/^([aoe])(ng)?$/$1$1$2/"
+    - "derive/iu$/Ⓠ/"
+    - "derive/(.)ei$/$1Ⓦ/"
+    - "derive/uan$/Ⓡ/"
+    - "derive/[uv]e$/Ⓣ/"
+    - "derive/un$/Ⓨ/"
+    - "derive/^sh/Ⓤ/"
+    - "derive/^ch/Ⓘ/"
+    - "derive/^zh/Ⓥ/"
+    - "derive/uo$/Ⓞ/"
+    - "derive/ie$/Ⓟ/"
+    - "derive/(.)i?ong$/$1Ⓢ/"
+    - "derive/ing$|uai$/Ⓚ/"
+    - "derive/(.)ai$/$1Ⓓ/"
+    - "derive/(.)en$/$1Ⓕ/"
+    - "derive/(.)eng$/$1Ⓖ/"
+    - "derive/[iu]ang$/Ⓛ/"
+    - "derive/(.)ang$/$1Ⓗ/"
+    - "derive/ian$/Ⓜ/"
+    - "derive/(.)an$/$1Ⓙ/"
+    - "derive/(.)ou$/$1Ⓩ/"
+    - "derive/[iu]a$/Ⓧ/"
+    - "derive/iao$/Ⓝ/"
+    - "derive/(.)ao$/$1Ⓒ/"
+    - "derive/ui$/Ⓥ/"
+    - "derive/in$/Ⓑ/"
     - "xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwrtyuiopsdfghjklzxcvbnm/"
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`"
   delimiter: " '"
@@ -756,9 +759,12 @@ traditionalize:
   tips: none
 translator:
   always_show_comments: true
+  comment_format:
+    - "xform/^/［/"
+    - "xform/$/］/"
   dictionary: rime_ice
   initial_quality: 1.2
   preedit_format:
-    {}
+    []
   prism: double_pinyin_flypy
   spelling_hints: 8
