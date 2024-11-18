@@ -14,7 +14,7 @@
 # 转化应当大写的单词
 ---
 name: en
-version: "2024-06-10"
+version: "2024-11-04"
 sort: by_weight
 ...
 # +_+
@@ -1451,7 +1451,6 @@ autumn	autumn
 AUX	AUX
 auxiliary	auxiliary
 AV	AV
-Ava	Ava
 avail	avail
 availability	availability
 available	available
@@ -2784,7 +2783,6 @@ cancellation	cancellation
 cancellations	cancellations
 cancelled	cancelled
 cancer	cancer
-Cancer	Cancer
 cancers	cancers
 # Cancun	Cancun
 candid	candid
@@ -2932,7 +2930,6 @@ carved	carved
 carver	carver
 carving	carving
 Cary	Cary
-CAS	CAS
 casa	casa
 cascade	cascade
 cascading	cascading
@@ -5258,6 +5255,7 @@ despair	despair
 despatch	despatch
 desperate	desperate
 desperately	desperately
+desperation	desperation
 despise	despise
 despite	despite
 dessert	dessert
@@ -6527,6 +6525,7 @@ epic	epic
 epidemic	epidemic
 epidemiology	epidemiology
 epilepsy	epilepsy
+epilogue	epilogue
 epinions	epinions
 episcopal	episcopal
 episode	episode
@@ -7920,9 +7919,6 @@ Gambia	Gambia
 gamble	gamble
 gambling	gambling
 game	game
-gameboy	gameboy
-gamecube	gamecube
-GameFAQs	GameFAQs
 gameplay	gameplay
 gamer	gamer
 gamers	gamers
@@ -10213,7 +10209,6 @@ jasmine	jasmine
 Jason	Jason
 jasper	jasper
 Java	Java
-JavaScript	JavaScript
 jaw	jaw
 jaws	jaws
 jay	jay
@@ -10365,8 +10360,6 @@ JPEG	JPEG
 JPG	JPG
 # jpy	jpy
 # jr	jr
-# js	js
-JSP	JSP
 # jt	jt
 # ju	ju
 Juan	Juan
@@ -21421,7 +21414,7 @@ zeal	zeal
 Zealand	Zealand
 zebra	zebra
 Zelda	Zelda
-Zen	Zen
+zen	zen
 zenith	zenith
 zeppelin	zeppelin
 zero	zero
