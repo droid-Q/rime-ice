@@ -1,11 +1,11 @@
 __build_info:
-  rime_version: 1.11.0
+  rime_version: 1.13.0
   timestamps:
-    default: 1707467842
+    default: 1742526415
     default.custom: 0
     double_pinyin_abc.custom: 0
-    double_pinyin_abc.schema: 1714956027
-    symbols_caps_v: 1703645079
+    double_pinyin_abc.schema: 1742526415
+    symbols_caps_v: 1734921067
     symbols_caps_v.custom: 0
 cn_en:
   comment_format:
@@ -16,7 +16,6 @@ cn_en:
   enable_sentence: false
   initial_quality: 0.5
   user_dict: "en_dicts/cn_en_abc"
-corrector: "{comment}"
 custom_phrase:
   db_class: stabledb
   dictionary: ""
@@ -36,17 +35,17 @@ emoji:
   option_name: emoji
 engine:
   filters:
-    - "lua_filter@corrector"
+    - "lua_filter@*corrector"
     - "reverse_lookup_filter@radical_reverse_lookup"
-    - "lua_filter@autocap_filter"
-    - "lua_filter@pin_cand_filter"
-    - "lua_filter@reduce_english_filter"
+    - "lua_filter@*autocap_filter"
+    - "lua_filter@*pin_cand_filter"
+    - "lua_filter@*reduce_english_filter"
     - "simplifier@emoji"
     - "simplifier@traditionalize"
-    - "lua_filter@search@radical_pinyin"
+    - "lua_filter@*search@radical_pinyin"
     - uniquifier
   processors:
-    - "lua_processor@select_character"
+    - "lua_processor@*select_character"
     - ascii_composer
     - recognizer
     - key_binder
@@ -65,15 +64,16 @@ engine:
   translators:
     - punct_translator
     - script_translator
-    - "lua_translator@date_translator"
-    - "lua_translator@lunar"
+    - "lua_translator@*date_translator"
+    - "lua_translator@*lunar"
     - "table_translator@custom_phrase"
     - "table_translator@melt_eng"
     - "table_translator@cn_en"
     - "table_translator@radical_lookup"
-    - "lua_translator@unicode"
-    - "lua_translator@number_translator"
-    - "lua_translator@force_gc"
+    - "lua_translator@*unicode"
+    - "lua_translator@*number_translator"
+    - "lua_translator@*calc_translator"
+    - "lua_translator@*force_gc"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -86,7 +86,6 @@ key_binder:
     - {accept: "Control+Shift+numbersign", toggle: ascii_punct, when: always}
     - {accept: "Control+Shift+4", toggle: traditionalization, when: always}
     - {accept: "Control+Shift+dollar", toggle: traditionalization, when: always}
-    - {accept: "Control+k", send: "Shift+Delete", when: composing}
     - {accept: KP_0, send: 0, when: composing}
     - {accept: KP_1, send: 1, when: composing}
     - {accept: KP_2, send: 2, when: composing}
@@ -98,6 +97,10 @@ key_binder:
     - {accept: KP_8, send: 8, when: composing}
     - {accept: KP_9, send: 9, when: composing}
     - {accept: KP_Decimal, send: period, when: composing}
+    - {accept: KP_Multiply, send: asterisk, when: composing}
+    - {accept: KP_Add, send: plus, when: composing}
+    - {accept: KP_Subtract, send: minus, when: composing}
+    - {accept: KP_Divide, send: slash, when: composing}
   import_preset: default
   search: "`"
   select_first_character: bracketleft
@@ -115,6 +118,7 @@ menu:
 pin_cand_filter:
   - "d\t的"
 punctuator:
+  digit_separators: ",.:"
   full_shape:
     " ": {commit: "　"}
     "!": {commit: "！"}
@@ -269,7 +273,7 @@ punctuator:
     Vffl: ["ﬄ"]
     Vfh: ["©", "®", "℗", "℠", "™", "℡", "℻", "☇", "☈", "☉", "☊", "☋", "☌", "☍", "☎", "☏", "☐", "☑", "☒", "☓", "☕", "☖", "☗", "⛉", "⛊", "☘", "☙", "☚", "☛", "☜", "☝", "☞", "☟", "☠", "☡", "☢", "☣", "☤", "☥", "☦", "☧", "☨", "☩", "☪", "☫", "☬", "☭", "☮", "☯", "☸", "♨", "♰", "♱", "♲", "♳", "♴", "♵", "♶", "♷", "♸", "♹", "♺", "♻", "♼", "♽", "♾", "♿", "⚆", "⚇", "⚈", "⚉", "⚐", "⚑", "⚒", "⚓", "⚔", "⚕", "⚖", "⚗", "⚘", "⚙", "⚚", "⚛", "⚜", "⚝", "⚞", "⚟", "⚠", "⚡", "⚰", "⚱", "⚲", "⚳", "⚴", "⚵", "⚶", "⚷", "⚸", "⚹", "⚺", "⚻", "⚼", "⚽", "⚾", "⚿", "⛀", "⛁", "⛂", "⛃", "⛋", "⛌", "⛍", "⛎", "⛏", "⛐", "⛑", "⛒", "⛓", "⛔", "⛕", "⛖", "⛗", "⛘", "⛙", "⛚", "⛛", "⛜", "⛝", "⛞", "⛟", "⛠", "⛡", "⛢", "⛣", "⛨", "⛩", "⛪", "⛫", "⛬", "⛭", "⛮", "⛯", "⛰", "⛱", "⛲", "⛳", "⛴", "⛵", "⛶", "⛷", "⛸", "⛹", "⛺", "⛻", "⛼", "⛽", "⛾", "⛿"]
     Vfi: ["ﬁ"]
-    Vfj: ["⸺", "——", "……", "⋯⋯", "～", "-", "–", "—", "·", "・", "‧", "/", "／"]
+    Vfjz: ["⸺", "——", "……", "⋯⋯", "～", "-", "–", "—", "·", "・", "‧", "/", "／"]
     Vfk: ["▀", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█", "▉", "▊", "▋", "▌", "▍", "▎", "▏", "▐", "░", "▒", "▓", "▔", "▕", "▖", "▗", "▘", "▙", "▚", "▛", "▜", "▝", "▞", "▟"]
     Vfl: ["ﬂ"]
     Vfn: ["ʩ"]
@@ -363,7 +367,7 @@ punctuator:
     Vth: ["ᵺ"]
     Vtq: ["☀", "☁", "⛅", "⛈", "⛆", "☂", "☔", "☃", "⛄", "⛇"]
     Vts: ["ʦ", "ʧ"]
-    Vtt: ["☄", "☼", "☽", "☾", "☿", "♀", "♁", "♂", "♃", "♄", "♅", "♆", "♇"]
+    Vtt: ["☉", "☼", "☽", "☾", "☿", "♀", "♁", "🜨", "♂", "♃", "♄", "♅", "⛢", "♆", "♇", "⚳", "☄"]
     Vtxj: ["⚊", "⚋", "⚌", "⚍", "⚎", "⚏", "𝌀", "𝌁", "𝌂", "𝌃", "𝌄", "𝌅", "𝌆", "𝌇", "𝌈", "𝌉", "𝌊", "𝌋", "𝌌", "𝌍", "𝌎", "𝌏", "𝌐", "𝌑", "𝌒", "𝌓", "𝌔", "𝌕", "𝌖", "𝌗", "𝌘", "𝌙", "𝌚", "𝌛", "𝌜", "𝌝", "𝌞", "𝌟", "𝌠", "𝌡", "𝌢", "𝌣", "𝌤", "𝌥", "𝌦", "𝌧", "𝌨", "𝌩", "𝌪", "𝌫", "𝌬", "𝌭", "𝌮", "𝌯", "𝌰", "𝌱", "𝌲", "𝌳", "𝌴", "𝌵", "𝌶", "𝌷", "𝌸", "𝌹", "𝌺", "𝌻", "𝌼", "𝌽", "𝌾", "𝌿", "𝍀", "𝍁", "𝍂", "𝍃", "𝍄", "𝍅", "𝍆", "𝍇", "𝍈", "𝍉", "𝍊", "𝍋", "𝍌", "𝍍", "𝍎", "𝍏", "𝍐", "𝍑", "𝍒", "𝍓", "𝍔", "𝍕", "𝍖"]
     Vtz: ["ꜩ"]
     Vu: ["ū", "ú", "ǔ", "ù", "ű", "ȕ", "û", "ŭ", "ȗ", "ü", "ǖ", "ǘ", "ǚ", "ǜ", "ů", "ũ", "ᵤ", "ᵘ", "ʉ", "ᶶ", "ủ", "ų", "ṷ", "ụ", "ṳ", "ṵ", "ư", "ʊ", "ᶷ", "ᵿ", "ᶙ", "ṻ", "ṹ", "ứ", "ừ", "ữ", "ử", "ự", "ꭒ", "ꭟ", "ꝸ", "ꭎ", "ꭏ", "ᴝ", "ᵙ", "ᴞ"]
@@ -404,6 +408,7 @@ radical_reverse_lookup:
 recognizer:
   import_preset: default
   patterns:
+    calculator: "^cC.+"
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
     gregorian_to_lunar: "^N[0-9]{1,8}"
     number: "^R[0-9]+[.]?[0-9]*"
@@ -446,7 +451,6 @@ reduce_english_filter:
     - cam
     - cans
     - cap
-    - cas
     - cef
     - chad
     - chan
@@ -757,6 +761,7 @@ translator:
     - "xform/^/［/"
     - "xform/$/］/"
   dictionary: rime_ice
+  enable_word_completion: true
   initial_quality: 1.2
   preedit_format:
     - "xform/o(\\w)/0$1/"

@@ -1,11 +1,11 @@
 __build_info:
-  rime_version: 1.11.0
+  rime_version: 1.13.0
   timestamps:
-    default: 1707467842
+    default: 1742526415
     default.custom: 0
-    double_pinyin_flypy.custom: 1712627989
-    double_pinyin_flypy.schema: 1714956027
-    symbols_caps_v: 1703645079
+    double_pinyin_flypy.custom: 1734921067
+    double_pinyin_flypy.schema: 1742526415
+    symbols_caps_v: 1734921067
     symbols_caps_v.custom: 0
 cn_en:
   comment_format:
@@ -16,7 +16,6 @@ cn_en:
   enable_sentence: false
   initial_quality: 0.5
   user_dict: "en_dicts/cn_en_flypy"
-corrector: "{comment}"
 custom_phrase:
   db_class: stabledb
   dictionary: ""
@@ -36,18 +35,17 @@ emoji:
   option_name: emoji
 engine:
   filters:
-    - "lua_filter@corrector"
+    - "lua_filter@*corrector"
     - "reverse_lookup_filter@radical_reverse_lookup"
-    - "lua_filter@search@radical_pinyin"
-    - "lua_filter@autocap_filter"
-    - "lua_filter@pin_cand_filter"
-    - "lua_filter@long_word_filter"
+    - "lua_filter@*autocap_filter"
+    - "lua_filter@*pin_cand_filter"
+    - "lua_filter@*reduce_english_filter"
     - "simplifier@emoji"
     - "simplifier@traditionalize"
-    - "lua_filter@reduce_english_filter"
+    - "lua_filter@*search@radical_pinyin"
     - uniquifier
   processors:
-    - "lua_processor@select_character"
+    - "lua_processor@*select_character"
     - ascii_composer
     - recognizer
     - key_binder
@@ -66,15 +64,20 @@ engine:
   translators:
     - punct_translator
     - script_translator
-    - "lua_translator@date_translator"
-    - "lua_translator@lunar"
+    - "lua_translator@*date_translator"
+    - "lua_translator@*lunar"
     - "table_translator@custom_phrase"
     - "table_translator@melt_eng"
     - "table_translator@cn_en"
     - "table_translator@radical_lookup"
-    - "lua_translator@unicode"
-    - "lua_translator@number_translator"
-    - "lua_translator@force_gc"
+    - "lua_translator@*unicode"
+    - "lua_translator@*number_translator"
+    - "lua_translator@*calc_translator"
+    - "lua_translator@*force_gc"
+grammar:
+  collocation_max_length: 5
+  collocation_min_length: 2
+  language: "amz-v3n3m1-zh-hans"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -87,7 +90,6 @@ key_binder:
     - {accept: "Control+Shift+numbersign", toggle: ascii_punct, when: always}
     - {accept: "Control+Shift+4", toggle: traditionalization, when: always}
     - {accept: "Control+Shift+dollar", toggle: traditionalization, when: always}
-    - {accept: "Control+k", send: "Shift+Delete", when: composing}
     - {accept: KP_0, send: 0, when: composing}
     - {accept: KP_1, send: 1, when: composing}
     - {accept: KP_2, send: 2, when: composing}
@@ -99,13 +101,14 @@ key_binder:
     - {accept: KP_8, send: 8, when: composing}
     - {accept: KP_9, send: 9, when: composing}
     - {accept: KP_Decimal, send: period, when: composing}
+    - {accept: KP_Multiply, send: asterisk, when: composing}
+    - {accept: KP_Add, send: plus, when: composing}
+    - {accept: KP_Subtract, send: minus, when: composing}
+    - {accept: KP_Divide, send: slash, when: composing}
   import_preset: default
   search: "`"
   select_first_character: bracketleft
   select_last_character: bracketright
-long_word_filter:
-  count: 10
-  idx: 1
 lunar: lunar
 melt_eng:
   comment_format:
@@ -116,9 +119,19 @@ melt_eng:
   initial_quality: 1.1
 menu:
   page_size: 7
+octagram:
+  grammar:
+    collocation_max_length: 5
+    collocation_min_length: 2
+    language: "amz-v3n3m1-zh-hans"
+  translator:
+    contextual_suggestions: true
+    max_homographs: 7
+    max_homophones: 7
 pin_cand_filter:
   - "d\t的"
 punctuator:
+  digit_separators: ",.:"
   full_shape:
     " ": {commit: "　"}
     "!": {commit: "！"}
@@ -273,7 +286,7 @@ punctuator:
     Vffl: ["ﬄ"]
     Vfh: ["©", "®", "℗", "℠", "™", "℡", "℻", "☇", "☈", "☉", "☊", "☋", "☌", "☍", "☎", "☏", "☐", "☑", "☒", "☓", "☕", "☖", "☗", "⛉", "⛊", "☘", "☙", "☚", "☛", "☜", "☝", "☞", "☟", "☠", "☡", "☢", "☣", "☤", "☥", "☦", "☧", "☨", "☩", "☪", "☫", "☬", "☭", "☮", "☯", "☸", "♨", "♰", "♱", "♲", "♳", "♴", "♵", "♶", "♷", "♸", "♹", "♺", "♻", "♼", "♽", "♾", "♿", "⚆", "⚇", "⚈", "⚉", "⚐", "⚑", "⚒", "⚓", "⚔", "⚕", "⚖", "⚗", "⚘", "⚙", "⚚", "⚛", "⚜", "⚝", "⚞", "⚟", "⚠", "⚡", "⚰", "⚱", "⚲", "⚳", "⚴", "⚵", "⚶", "⚷", "⚸", "⚹", "⚺", "⚻", "⚼", "⚽", "⚾", "⚿", "⛀", "⛁", "⛂", "⛃", "⛋", "⛌", "⛍", "⛎", "⛏", "⛐", "⛑", "⛒", "⛓", "⛔", "⛕", "⛖", "⛗", "⛘", "⛙", "⛚", "⛛", "⛜", "⛝", "⛞", "⛟", "⛠", "⛡", "⛢", "⛣", "⛨", "⛩", "⛪", "⛫", "⛬", "⛭", "⛮", "⛯", "⛰", "⛱", "⛲", "⛳", "⛴", "⛵", "⛶", "⛷", "⛸", "⛹", "⛺", "⛻", "⛼", "⛽", "⛾", "⛿"]
     Vfi: ["ﬁ"]
-    Vfj: ["⸺", "——", "……", "⋯⋯", "～", "-", "–", "—", "·", "・", "‧", "/", "／"]
+    Vfjz: ["⸺", "——", "……", "⋯⋯", "～", "-", "–", "—", "·", "・", "‧", "/", "／"]
     Vfk: ["▀", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█", "▉", "▊", "▋", "▌", "▍", "▎", "▏", "▐", "░", "▒", "▓", "▔", "▕", "▖", "▗", "▘", "▙", "▚", "▛", "▜", "▝", "▞", "▟"]
     Vfl: ["ﬂ"]
     Vfn: ["ʩ"]
@@ -367,7 +380,7 @@ punctuator:
     Vth: ["ᵺ"]
     Vtq: ["☀", "☁", "⛅", "⛈", "⛆", "☂", "☔", "☃", "⛄", "⛇"]
     Vts: ["ʦ", "ʧ"]
-    Vtt: ["☄", "☼", "☽", "☾", "☿", "♀", "♁", "♂", "♃", "♄", "♅", "♆", "♇"]
+    Vtt: ["☉", "☼", "☽", "☾", "☿", "♀", "♁", "🜨", "♂", "♃", "♄", "♅", "⛢", "♆", "♇", "⚳", "☄"]
     Vtxj: ["⚊", "⚋", "⚌", "⚍", "⚎", "⚏", "𝌀", "𝌁", "𝌂", "𝌃", "𝌄", "𝌅", "𝌆", "𝌇", "𝌈", "𝌉", "𝌊", "𝌋", "𝌌", "𝌍", "𝌎", "𝌏", "𝌐", "𝌑", "𝌒", "𝌓", "𝌔", "𝌕", "𝌖", "𝌗", "𝌘", "𝌙", "𝌚", "𝌛", "𝌜", "𝌝", "𝌞", "𝌟", "𝌠", "𝌡", "𝌢", "𝌣", "𝌤", "𝌥", "𝌦", "𝌧", "𝌨", "𝌩", "𝌪", "𝌫", "𝌬", "𝌭", "𝌮", "𝌯", "𝌰", "𝌱", "𝌲", "𝌳", "𝌴", "𝌵", "𝌶", "𝌷", "𝌸", "𝌹", "𝌺", "𝌻", "𝌼", "𝌽", "𝌾", "𝌿", "𝍀", "𝍁", "𝍂", "𝍃", "𝍄", "𝍅", "𝍆", "𝍇", "𝍈", "𝍉", "𝍊", "𝍋", "𝍌", "𝍍", "𝍎", "𝍏", "𝍐", "𝍑", "𝍒", "𝍓", "𝍔", "𝍕", "𝍖"]
     Vtz: ["ꜩ"]
     Vu: ["ū", "ú", "ǔ", "ù", "ű", "ȕ", "û", "ŭ", "ȗ", "ü", "ǖ", "ǘ", "ǚ", "ǜ", "ů", "ũ", "ᵤ", "ᵘ", "ʉ", "ᶶ", "ủ", "ų", "ṷ", "ụ", "ṳ", "ṵ", "ư", "ʊ", "ᶷ", "ᵿ", "ᶙ", "ṻ", "ṹ", "ứ", "ừ", "ữ", "ử", "ự", "ꭒ", "ꭟ", "ꝸ", "ꭎ", "ꭏ", "ᴝ", "ᵙ", "ᴞ"]
@@ -408,6 +421,7 @@ radical_reverse_lookup:
 recognizer:
   import_preset: default
   patterns:
+    calculator: "^cC.+"
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
     gregorian_to_lunar: "^N[0-9]{1,8}"
     number: "^R[0-9]+[.]?[0-9]*"
@@ -450,7 +464,6 @@ reduce_english_filter:
     - cam
     - cans
     - cap
-    - cas
     - cef
     - chad
     - chan
@@ -702,34 +715,35 @@ schema:
   version: 1
 speller:
   algebra:
+    - "erase/^xx$/"
     - "derive/^([jqxy])u$/$1v/"
     - "derive/^([aoe])([ioun])$/$1$1$2/"
-    - "derive/^([aoe])(ng)?$/$1$1$2/"
-    - "derive/iu$/Ⓠ/"
-    - "derive/(.)ei$/$1Ⓦ/"
-    - "derive/uan$/Ⓡ/"
-    - "derive/[uv]e$/Ⓣ/"
-    - "derive/un$/Ⓨ/"
-    - "derive/^sh/Ⓤ/"
-    - "derive/^ch/Ⓘ/"
-    - "derive/^zh/Ⓥ/"
-    - "derive/uo$/Ⓞ/"
-    - "derive/ie$/Ⓟ/"
-    - "derive/(.)i?ong$/$1Ⓢ/"
-    - "derive/ing$|uai$/Ⓚ/"
-    - "derive/(.)ai$/$1Ⓓ/"
-    - "derive/(.)en$/$1Ⓕ/"
-    - "derive/(.)eng$/$1Ⓖ/"
-    - "derive/[iu]ang$/Ⓛ/"
-    - "derive/(.)ang$/$1Ⓗ/"
-    - "derive/ian$/Ⓜ/"
-    - "derive/(.)an$/$1Ⓙ/"
-    - "derive/(.)ou$/$1Ⓩ/"
-    - "derive/[iu]a$/Ⓧ/"
-    - "derive/iao$/Ⓝ/"
-    - "derive/(.)ao$/$1Ⓒ/"
-    - "derive/ui$/Ⓥ/"
-    - "derive/in$/Ⓑ/"
+    - "xform/^([aoe])(ng)?$/$1$1$2/"
+    - "xform/iu$/Ⓠ/"
+    - "xform/(.)ei$/$1Ⓦ/"
+    - "xform/uan$/Ⓡ/"
+    - "xform/[uv]e$/Ⓣ/"
+    - "xform/un$/Ⓨ/"
+    - "xform/^sh/Ⓤ/"
+    - "xform/^ch/Ⓘ/"
+    - "xform/^zh/Ⓥ/"
+    - "xform/uo$/Ⓞ/"
+    - "xform/ie$/Ⓟ/"
+    - "xform/(.)i?ong$/$1Ⓢ/"
+    - "xform/ing$|uai$/Ⓚ/"
+    - "xform/(.)ai$/$1Ⓓ/"
+    - "xform/(.)en$/$1Ⓕ/"
+    - "xform/(.)eng$/$1Ⓖ/"
+    - "xform/[iu]ang$/Ⓛ/"
+    - "xform/(.)ang$/$1Ⓗ/"
+    - "xform/ian$/Ⓜ/"
+    - "xform/(.)an$/$1Ⓙ/"
+    - "xform/(.)ou$/$1Ⓩ/"
+    - "xform/[iu]a$/Ⓧ/"
+    - "xform/iao$/Ⓝ/"
+    - "xform/(.)ao$/$1Ⓒ/"
+    - "xform/ui$/Ⓥ/"
+    - "xform/in$/Ⓑ/"
     - "xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwrtyuiopsdfghjklzxcvbnm/"
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`"
   delimiter: " '"
@@ -762,8 +776,12 @@ translator:
   comment_format:
     - "xform/^/［/"
     - "xform/$/］/"
+  contextual_suggestions: true
   dictionary: rime_ice
+  enable_word_completion: true
   initial_quality: 1.2
+  max_homographs: 7
+  max_homophones: 7
   preedit_format:
     []
   prism: double_pinyin_flypy

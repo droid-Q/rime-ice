@@ -1,11 +1,11 @@
 __build_info:
-  rime_version: 1.11.2
+  rime_version: 1.13.0
   timestamps:
-    default: 1707467842
+    default: 1742526415
     default.custom: 0
     rime_ice.custom: 0
-    rime_ice.schema: 1717383722
-    symbols_v: 1703645079
+    rime_ice.schema: 1742526416
+    symbols_v: 1734921067
     symbols_v.custom: 0
 cn_en:
   comment_format:
@@ -16,7 +16,6 @@ cn_en:
   enable_sentence: false
   initial_quality: 0.5
   user_dict: "en_dicts/cn_en"
-corrector: "{comment}"
 custom_phrase:
   db_class: stabledb
   dictionary: ""
@@ -36,19 +35,19 @@ emoji:
   option_name: emoji
 engine:
   filters:
-    - "lua_filter@corrector"
+    - "lua_filter@*corrector"
     - "reverse_lookup_filter@radical_reverse_lookup"
-    - "lua_filter@autocap_filter"
-    - "lua_filter@v_filter"
-    - "lua_filter@pin_cand_filter"
-    - "lua_filter@long_word_filter"
-    - "lua_filter@reduce_english_filter"
+    - "lua_filter@*autocap_filter"
+    - "lua_filter@*v_filter"
+    - "lua_filter@*pin_cand_filter"
+    - "lua_filter@*long_word_filter"
+    - "lua_filter@*reduce_english_filter"
     - "simplifier@emoji"
     - "simplifier@traditionalize"
-    - "lua_filter@search@radical_pinyin"
+    - "lua_filter@*search@radical_pinyin"
     - uniquifier
   processors:
-    - "lua_processor@select_character"
+    - "lua_processor@*select_character"
     - ascii_composer
     - recognizer
     - key_binder
@@ -67,15 +66,16 @@ engine:
   translators:
     - punct_translator
     - script_translator
-    - "lua_translator@date_translator"
-    - "lua_translator@lunar"
+    - "lua_translator@*date_translator"
+    - "lua_translator@*lunar"
     - "table_translator@custom_phrase"
     - "table_translator@melt_eng"
     - "table_translator@cn_en"
     - "table_translator@radical_lookup"
-    - "lua_translator@unicode"
-    - "lua_translator@number_translator"
-    - "lua_translator@force_gc"
+    - "lua_translator@*unicode"
+    - "lua_translator@*number_translator"
+    - "lua_translator@*calc_translator"
+    - "lua_translator@*force_gc"
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -88,7 +88,6 @@ key_binder:
     - {accept: "Control+Shift+numbersign", toggle: ascii_punct, when: always}
     - {accept: "Control+Shift+4", toggle: traditionalization, when: always}
     - {accept: "Control+Shift+dollar", toggle: traditionalization, when: always}
-    - {accept: "Control+k", send: "Shift+Delete", when: composing}
     - {accept: KP_0, send: 0, when: composing}
     - {accept: KP_1, send: 1, when: composing}
     - {accept: KP_2, send: 2, when: composing}
@@ -100,6 +99,10 @@ key_binder:
     - {accept: KP_8, send: 8, when: composing}
     - {accept: KP_9, send: 9, when: composing}
     - {accept: KP_Decimal, send: period, when: composing}
+    - {accept: KP_Multiply, send: asterisk, when: composing}
+    - {accept: KP_Add, send: plus, when: composing}
+    - {accept: KP_Subtract, send: minus, when: composing}
+    - {accept: KP_Divide, send: slash, when: composing}
   import_preset: default
   search: "`"
   select_first_character: bracketleft
@@ -246,6 +249,7 @@ pin_cand_filter:
   - "sms\t什么是"
   - "sma\t什么啊"
 punctuator:
+  digit_separators: ",.:"
   full_shape:
     " ": {commit: "　"}
     "!": {commit: "！"}
@@ -370,7 +374,7 @@ punctuator:
     vY: ["Ȳ", "Ý", "Ỳ", "Ŷ", "Ẏ", "Ÿ", "Ỹ", "ʏ", "Ɏ", "Ỷ", "Ỵ", "Ƴ", "Ỿ"]
     vZ: ["Ź", "Ž", "Ẑ", "Ż", "ᴢ", "Ƶ", "Ẕ", "Ẓ", "Ȥ", "Ⱬ", "Ʒ", "ᴣ", "Ǯ", "Ƹ", "Ɀ", "Ꝣ"]
     va: ["ā", "á", "ǎ", "à", "ȁ", "â", "ă", "ȃ", "ȧ", "ä", "å", "ã", "ₐ", "ᵃ", "ª", "ⱥ", "ꬰ", "ả", "ą", "ạ", "ḁ", "ẚ", "ấ", "ầ", "ẫ", "ẩ", "ắ", "ằ", "ẵ", "ẳ", "ǡ", "ǟ", "ǻ", "ậ", "ặ", "ᶏ", "ɐ", "ᵄ", "ɑ", "ᵅ", "ᶐ", "ɒ", "ᶛ"]
-    vaa: ["🐶", "🐮", "🐵", "🙈", "🙉", "🙊", "🐒", "🐔", "🐴", "🐷", "🐽", "🐭", "🦐", "🦀", "🐢", "🐱", "🐹", "🐰", "🐻", "🐼", "🐨", "🐧", "🐦", "🐤", "🐣", "🐥", "🐯", "🦁", "🐸", "🐙", "🦆", "🦅", "🦉", "🦇", "🐺", "🐗", "🦄", "🐝", "🐛", "🦋", "🐌", "🐞", "🐜", "🕷", "🦂", "🐍", "🦎", "🦑", "🐠", "🐟", "🐡", "🐬", "🐳", "🐊", "🐆", "🐅", "🐃", "🐂", "🐄", "🐪", "🐫", "🐘", "🦏", "🦍", "🐐", "🐏", "🐑", "🐎", "🐖", "🐀", "🐁", "🐓", "🦃", "🕊", "🐕", "🐩", "🐈", "🐇", "🐿"]
+    vaa: ["ꜳ"]
     vae: ["æ", "ǣ", "ǽ", "ᵆ", "ᴂ"]
     valabo: ["👳🏽", "🧔🏽", "🧕🏽"]
     valaboren: ["👳🏽", "🧔🏽", "🧕🏽"]
@@ -398,7 +402,6 @@ punctuator:
     vcanju: ["🥄", "🍴", "🍽️", "🥣", "🥢", "🫖"]
     vcap: ["⇪"]
     vcaps: ["⇪"]
-    vcc: ["©", "®", "℗", "ⓘ", "℠", "™", "℡", "␡", "♂", "♀", "☉", "☊", "☋", "☌", "☍", "☐", "☑︎", "☒", "☜", "☝", "☞", "☟", "✎", "✄", "♻", "⚐", "⚑", "⚠"]
     vche: ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎️", "🚓", "🚑", "🚒", "🚐", "🚚", "🚛", "🎢", "🛻", "🚔", "🚍", "🚘", "🚖", "🛺"]
     vcheng: ["×"]
     vchenggui: ["🚈", "🚇", "🚊", "🚞", "🚋", "🚃", "🚟"]
@@ -415,7 +418,6 @@ punctuator:
     vdayu: [">", "≥"]
     vdaziran: ["🔥", "💧", "🌬️", "🫧", "☀️", "🌤️", "⛅️", "🌦️", "🌥️", "☁️", "🌨️", "🌧️", "🌩️", "⛈️", "❄️", "💨", "🌪️", "🌫️", "🌊", "🧊", "🪨"]
     vdb: ["ȸ"]
-    vdd: ["😂", "☺️", "😏", "😒", "🤔", "😳", "😔", "😱", "😭", "🙈️", "💩", "😀", "😁", "🤣", "😄", "😅", "😆", "😇", "😉", "😊", "🙂", "🙃", "😋", "😌", "😍", "😘", "😙", "😜", "😝", "🤑", "🤓", "😎", "🤗", "😶", "😑", "🙄", "😞", "😟", "😠", "😡", "😕", "☹️", "😣", "😖", "😫", "😤", "😮", "😨", "😰", "😯", "😦", "😢", "😥", "😪", "😓", "🤤", "😲", "🤥", "🤢", "🤧", "🤐", "😷", "🤒", "🤕", "😴", "😃", "😗", "😚", "😛", "🙁", "😩", "😐", "😧", "😵", "😬", "🤪", "🤨", "🧐", "🤩", "🤬", "🤯", "🤭", "🤫", "🤮", "🤡", "🤠", "😈", "👿", "👻", "💀", "👽"]
     vdel: ["⌦"]
     vdh: ["。", "．", "，", "、", "：", "；", "！", "‼", "？", "⁇"]
     vdian: ["·"]
@@ -445,12 +447,12 @@ punctuator:
     vfase: ["🦲", "🦰", "🦱", "🦳"]
     vfaxing: ["🦲", "🦰", "🦱", "🦳"]
     vfeixingqi: ["🛩️", "✈️", "🚁", "🚀", "🛸"]
-    vff: ["½", "⅓", "⅔", "¼", "¾", "⅒", "‰"]
+    vff: ["ﬀ"]
     vffi: ["ﬃ"]
     vffl: ["ﬄ"]
     vfh: ["©", "®", "℗", "℠", "™", "℡", "℻", "☇", "☈", "☉", "☊", "☋", "☌", "☍", "☎", "☏", "☐", "☑", "☒", "☓", "☕", "☖", "☗", "⛉", "⛊", "☘", "☙", "☚", "☛", "☜", "☝", "☞", "☟", "☠", "☡", "☢", "☣", "☤", "☥", "☦", "☧", "☨", "☩", "☪", "☫", "☬", "☭", "☮", "☯", "☸", "♨", "♰", "♱", "♲", "♳", "♴", "♵", "♶", "♷", "♸", "♹", "♺", "♻", "♼", "♽", "♾", "♿", "⚆", "⚇", "⚈", "⚉", "⚐", "⚑", "⚒", "⚓", "⚔", "⚕", "⚖", "⚗", "⚘", "⚙", "⚚", "⚛", "⚜", "⚝", "⚞", "⚟", "⚠", "⚡", "⚰", "⚱", "⚲", "⚳", "⚴", "⚵", "⚶", "⚷", "⚸", "⚹", "⚺", "⚻", "⚼", "⚽", "⚾", "⚿", "⛀", "⛁", "⛂", "⛃", "⛋", "⛌", "⛍", "⛎", "⛏", "⛐", "⛑", "⛒", "⛓", "⛔", "⛕", "⛖", "⛗", "⛘", "⛙", "⛚", "⛛", "⛜", "⛝", "⛞", "⛟", "⛠", "⛡", "⛢", "⛣", "⛨", "⛩", "⛪", "⛫", "⛬", "⛭", "⛮", "⛯", "⛰", "⛱", "⛲", "⛳", "⛴", "⛵", "⛶", "⛷", "⛸", "⛹", "⛺", "⛻", "⛼", "⛽", "⛾", "⛿"]
     vfi: ["ﬁ"]
-    vfj: ["⸺", "——", "……", "⋯⋯", "～", "-", "–", "—", "·", "・", "‧", "/", "／"]
+    vfjz: ["⸺", "——", "……", "⋯⋯", "～", "-", "–", "—", "·", "・", "‧", "/", "／"]
     vfk: ["▀", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█", "▉", "▊", "▋", "▌", "▍", "▎", "▏", "▐", "░", "▒", "▓", "▔", "▕", "▖", "▗", "▘", "▙", "▚", "▛", "▜", "▝", "▞", "▟"]
     vfl: ["ﬂ"]
     vfn: ["ʩ"]
@@ -603,7 +605,6 @@ punctuator:
     vshuma: ["⌚️", "📱", "💻", "⌨️", "🖥️", "🖨️", "🖱️", "📷", "📹", "💾", "💽", "💿", "📀"]
     vsj: ["㍘", "㍙", "㍚", "㍛", "㍜", "㍝", "㍞", "㍟", "㍠", "㍡", "㍢", "㍣", "㍤", "㍥", "㍦", "㍧", "㍨", "㍩", "㍪", "㍫", "㍬", "㍭", "㍮", "㍯", "㍰"]
     vspace: ["␣"]
-    vss: ["👌", "👍", "👎", "👊", "🤝", "✌️", "💪", "🙏", "✊", "👏", "👋", "🤞", "✋", "🤚", "🖖", "🤙", "🖕", "🤟", "☝️", "👆", "👇", "👈", "👉", "🤛", "🤜", "🤲", "🤘", "🙌", "👐", "✍️", "💅"]
     vssd: ["°C"]
     vsuoyi: ["∴"]
     vsx: ["±", "÷", "×", "∈", "∏", "∑", "－", "＋", "＜", "≮", "＝", "≠", "＞", "≯", "∕", "√", "∝", "∞", "∟", "∠", "∥", "∧", "∨", "∩", "∪", "∫", "∮", "∴", "∵", "∷", "∽", "≈", "≌", "≒", "≡", "≤", "≥", "≦", "≧", "⊕", "⊙", "⊥", "⊿", "㏑", "㏒"]
@@ -622,7 +623,7 @@ punctuator:
     vtiaoliao: ["🧄", "🫚", "🧅", "🧂", "🧀"]
     vtq: ["☀", "☁", "⛅", "⛈", "⛆", "☂", "☔", "☃", "⛄", "⛇"]
     vts: ["ʦ", "ʧ"]
-    vtt: ["☄", "☼", "☽", "☾", "☿", "♀", "♁", "♂", "♃", "♄", "♅", "♆", "♇"]
+    vtt: ["☉", "☼", "☽", "☾", "☿", "♀", "♁", "🜨", "♂", "♃", "♄", "♅", "⛢", "♆", "♇", "⚳", "☄"]
     vtxj: ["⚊", "⚋", "⚌", "⚍", "⚎", "⚏", "𝌀", "𝌁", "𝌂", "𝌃", "𝌄", "𝌅", "𝌆", "𝌇", "𝌈", "𝌉", "𝌊", "𝌋", "𝌌", "𝌍", "𝌎", "𝌏", "𝌐", "𝌑", "𝌒", "𝌓", "𝌔", "𝌕", "𝌖", "𝌗", "𝌘", "𝌙", "𝌚", "𝌛", "𝌜", "𝌝", "𝌞", "𝌟", "𝌠", "𝌡", "𝌢", "𝌣", "𝌤", "𝌥", "𝌦", "𝌧", "𝌨", "𝌩", "𝌪", "𝌫", "𝌬", "𝌭", "𝌮", "𝌯", "𝌰", "𝌱", "𝌲", "𝌳", "𝌴", "𝌵", "𝌶", "𝌷", "𝌸", "𝌹", "𝌺", "𝌻", "𝌼", "𝌽", "𝌾", "𝌿", "𝍀", "𝍁", "𝍂", "𝍃", "𝍄", "𝍅", "𝍆", "𝍇", "𝍈", "𝍉", "𝍊", "𝍋", "𝍌", "𝍍", "𝍎", "𝍏", "𝍐", "𝍑", "𝍒", "𝍓", "𝍔", "𝍕", "𝍖"]
     vtz: ["ꜩ"]
     vu: ["ū", "ú", "ǔ", "ù", "ű", "ȕ", "û", "ŭ", "ȗ", "ü", "ǖ", "ǘ", "ǚ", "ǜ", "ů", "ũ", "ᵤ", "ᵘ", "ʉ", "ᶶ", "ủ", "ų", "ṷ", "ụ", "ṳ", "ṵ", "ư", "ʊ", "ᶷ", "ᵿ", "ᶙ", "ṻ", "ṹ", "ứ", "ừ", "ữ", "ử", "ự", "ꭒ", "ꭟ", "ꝸ", "ꭎ", "ꭏ", "ᴝ", "ᵙ", "ᴞ"]
@@ -653,7 +654,6 @@ punctuator:
     vxq: ["♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"]
     vxue: ["❄️", "🌨️", "☃️", "⛄️", "🧊"]
     vxuexing: ["🅰️", "🅱️", "🅾️", "🆎️"]
-    vxx: ["＊", "×", "✱", "★", "☆", "✩", "✧", "❋", "❊", "❉", "❈", "❅", "✿", "✲"]
     vxz: ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"]
     vxzg: ["白羊宫", "金牛宫", "双子宫", "巨蟹宫", "狮子宫", "室女宫", "天秤宫", "天蝎宫", "人马宫", "摩羯宫", "宝瓶宫", "双鱼宫"]
     vxzm: ["白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "室女座", "天秤座", "天蝎座", "人马座", "摩羯座", "宝瓶座", "双鱼座"]
@@ -663,9 +663,10 @@ punctuator:
     vyayi: ["🧓🏻", "🧑🏻", "🧒🏻", "👶🏻"]
     vyayinan: ["👴🏻", "👨🏻", "👦🏻"]
     vyayinv: ["👵🏻", "👩🏻", "👧🏻"]
-    vye: ["🍃", "🍂", "🍁", "🌱", "🌿", "🥬"]
+    vye: ["🌙", "💫", "⭐️", "🌟", "✨", "🌛", "🌜"]
     vyekong: ["🌙", "💫", "⭐️", "🌟", "✨", "🌛", "🌜"]
     vyewei: ["🦉", "🦇", "🐍", "🐢", "🦝", "🦨", "🦡", "🦫", "🐿️", "🦦", "🦥", "🦔", "🐺", "🐗", "🐡", "🐬", "🐳", "🐋", "🦈", "🦭", "🐊", "🐅", "🐆", "🦓", "🦍", "🦧", "🐘", "🦛", "🦏", "🦒", "🦘", "🦩", "🫏", "🫎"]
+    vyezi: ["🍃", "🍂", "🍁", "🌱", "🌿", "🥬"]
     vyf: ["㋀", "㋁", "㋂", "㋃", "㋄", "㋅", "㋆", "㋇", "㋈", "㋉", "㋊", "㋋"]
     vyifu: ["🧥", "👚", "👕", "👖", "🩳", "👔", "👗", "👘", "🥻", "🩲", "👙", "🩱", "🥼"]
     vyinliao: ["🧋", "🍹", "🧃", "🍸", "🍵", "☕️", "🥛", "🍷", "🥃", "🍶", "🥂", "🍾", "🍻", "🍺", "🧉"]
@@ -708,7 +709,6 @@ punctuator:
     vzuoxia: ["↙"]
     vzuoyou: ["↔︎", "⇔", "⇋"]
     vzy: ["ㄅ", "ㄆ", "ㄇ", "ㄈ", "ㄉ", "ㄊ", "ㄋ", "ㄌ", "ㄍ", "ㄎ", "ㄏ", "ㄐ", "ㄑ", "ㄒ", "ㄓ", "ㄔ", "ㄕ", "ㄖ", "ㄗ", "ㄘ", "ㄙ", "ㄧ", "ㄨ", "ㄩ", "ㄚ", "ㄛ", "ㄜ", "ㄝ", "ㄞ", "ㄟ", "ㄠ", "ㄡ", "ㄢ", "ㄣ", "ㄤ", "ㄥ", "ㄦ", "ㄪ", "ㄫ", "ㄬ", "ㄭ", "ㆠ", "ㆡ", "ㆢ", "ㆣ", "ㆤ", "ㆥ", "ㆦ", "ㆧ", "ㆨ", "ㆩ", "ㆪ", "ㆫ", "ㆬ", "ㆭ", "ㆮ", "ㆯ", "ㆰ", "ㆱ", "ㆲ", "ㆳ", "ㆴ", "ㆵ", "ㆶ", "ㆷ"]
-    vzz: ["⌘", "⌥", "⇧", "⌃", "⎋", "⇪", "", "⌫", "⌦", "↩︎", "⏎", "␣", "⏏", "⇟", "⇞"]
 radical_lookup:
   comment_format:
     - "erase/^.*$//"
@@ -724,6 +724,7 @@ radical_reverse_lookup:
 recognizer:
   import_preset: default
   patterns:
+    calculator: "^cC.+"
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
     gregorian_to_lunar: "^N[0-9]{1,8}"
     number: "^R[0-9]+[.]?[0-9]*"
@@ -766,7 +767,6 @@ reduce_english_filter:
     - cam
     - cans
     - cap
-    - cas
     - cef
     - chad
     - chan
@@ -1001,9 +1001,24 @@ reduce_english_filter:
     - wax
     - weir
     - won
+    - went
     - yan
     - yen
     - zach
+    - my
+    - mt
+    - dj
+    - as
+    - js
+    - cs
+    - ak
+    - ps
+    - cd
+    - cn
+    - hk
+    - bt
+    - pk
+    - ml
 schema:
   author:
     - Dvel
@@ -1016,7 +1031,7 @@ schema:
 
   name: "雾凇拼音"
   schema_id: rime_ice
-  version: "2024-02-25"
+  version: "2025-02-24"
 speller:
   algebra:
     - "erase/^hm$/"
@@ -1098,6 +1113,7 @@ translator:
     - "xform/^/［/"
     - "xform/$/］/"
   dictionary: rime_ice
+  enable_word_completion: true
   initial_quality: 1.2
   preedit_format:
     - "xform/([jqxy])v/$1u/"
