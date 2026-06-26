@@ -27,7 +27,7 @@
 # 需要注音的字词设定在 others/script/rime/需要注音.txt
 ---
 name: 8105
-version: "2025-10-20"
+version: "2026-06-01"
 sort: by_weight
 ...
 ### 按需启用
@@ -38,25 +38,42 @@ sort: by_weight
 
 ### 扩展，不在《通用规范汉字表》的字:
 𤭢	cei	1000
+揞	an	1
 鿫	ao	1
 㞎	ba	1
 𰻝	biang	1
 蟌	cong	1
+鿕	dan	1
+氹	dang	1
 㨃	dui	1
 诶	ei	1
 奀	en	1
+鞥	eng	1
+𠲎	fa	1
 覅	fiao	1
+鳆	fu	1
 鿔	ge	1
 睆	huan	1
+檵	ji	1
+朘	juan	1
+罥	juan	1
 佧	ka	1
 堀	ku	1
 菈	la	1
 𫟷	li	1
+脢	mei	1
 濛	meng	1
+蒾	mi	1
+麿	mo	1
 霂	mu	1
 鿭	ni	1
 嬢	niang	1
+苶	nie	1
+㖏	nie	1
+𫪘	ou	1
+𤆵	pa	1
 珮	pei	1
+榀	pin	1
 螓	qin	1
 䞍	qing	1
 卻	que	1
@@ -72,11 +89,15 @@ sort: by_weight
 樋	tong	1
 凃	tu	1
 氽	tun	1
+揾	wen	1
+矽	xi	1
 雫	xia	1
 咲	xiao	1
 蓺	yi	1
 𫚪	yu	1
+膣	zhi	1
 跩	zhuai	1
+𭎂	zong	1
 # 注释掉的这几行已经加入到下面并调整到合适的权重了
 # 〇	ling
 # 囧	jiong
@@ -394,7 +415,6 @@ sort: by_weight
 敝	bi	10151
 痹	bi	9748
 弼	bi	8249
-贲	bi	4601
 俾	bi	3864
 裨	bi	2321
 薜	bi	2167
@@ -406,6 +426,7 @@ sort: by_weight
 篦	bi	550
 荜	bi	550
 狴	bi	536
+贲	bi	460
 毖	bi	423
 蓖	bi	317
 嬖	bi	299
@@ -418,7 +439,6 @@ sort: by_weight
 秕	bi	123
 箅	bi	101
 芘	bi	101
-佛	bi	100
 襞	bi	82
 苾	bi	68
 滗	bi	47
@@ -437,6 +457,7 @@ sort: by_weight
 佖	bi	7
 馝	bi	3
 坒	bi	2
+佛	bi	1
 泌	bi	1
 秘	bi	1
 边	bian	2448615
@@ -2757,6 +2778,7 @@ sort: by_weight
 惎	ji	2
 期	ji	1
 鱾	ji	1
+齐	ji	1
 𫓹	ji	1
 㴔	ji	0
 堲	ji	0
@@ -3268,7 +3290,7 @@ sort: by_weight
 玃	jue	9
 噱	jue	5
 砄	jue	3
-㵐	jue	0
+㵐	jue	1
 𫔎	jue	0
 𫘝	jue	0
 均	jun	316506
@@ -3292,6 +3314,7 @@ sort: by_weight
 莙	jun	15
 晙	jun	6
 筠	jun	1
+鋆	jun	1
 隽	jun	1
 鲪	jun	1
 龟	jun	1
@@ -3758,7 +3781,7 @@ sort: by_weight
 珕	li	0
 𫵷	li	0
 𬍛	li	0
-俩	lia	3
+俩	lia	99
 连	lian	2453048
 脸	lian	1845354
 联	lian	514908
@@ -4289,6 +4312,7 @@ sort: by_weight
 獴	meng	73
 礞	meng	12
 鹲	meng	9
+氓	meng	1
 㠓	meng	0
 𫑡	meng	0
 密	mi	506110
@@ -4582,6 +4606,7 @@ sort: by_weight
 袅	niao	16381
 茑	niao	395
 脲	niao	14
+溺	niao	1
 捏	nie	81503
 聂	nie	36076
 孽	nie	25919
@@ -5686,7 +5711,7 @@ sort: by_weight
 侁	shen	18
 瞫	shen	12
 鲹	shen	2
-屾	shen	0
+屾	shen	1
 𬬹	shen	0
 𬳽	shen	0
 生	sheng	4966773
@@ -5933,6 +5958,7 @@ sort: by_weight
 飔	si	14
 凘	si	13
 虒	si	5
+偲	si	1
 㟃	si	0
 楒	si	0
 送	song	668592
@@ -5995,10 +6021,10 @@ sort: by_weight
 骕	su	55
 甦	su	53
 鹔	su	22
+𫗧	su	7
 傃	su	4
 蹜	su	3
 缩	su	1
-𫗧	su	0
 算	suan	1263186
 酸	suan	115604
 蒜	suan	14174
@@ -6095,6 +6121,7 @@ sort: by_weight
 炱	tai	88
 骀	tai	79
 鲐	tai	14
+呔	tai	1
 谈	tan	536829
 叹	tan	421997
 弹	tan	355948
@@ -6249,6 +6276,7 @@ sort: by_weight
 黇	tian	2
 沺	tian	1
 淟	tian	1
+钿	tian	1
 晪	tian	0
 条	tiao	925439
 调	tiao	542792
@@ -6593,8 +6621,8 @@ sort: by_weight
 蓊	weng	394
 蕹	weng	40
 鹟	weng	32
+𬭩	weng	16
 滃	weng	9
-𬭩	weng	1
 我	wo	29569261
 握	wo	340839
 窝	wo	98104
@@ -7408,6 +7436,7 @@ sort: by_weight
 猺	yao	3
 侥	yao	1
 媱	yao	1
+繇	yao	1
 㙘	yao	0
 也	ye	9508702
 业	ye	938051
@@ -7859,7 +7888,9 @@ sort: by_weight
 㺄	yu	1
 尉	yu	1
 艅	yu	1
+菀	yu	1
 蔚	yu	1
+谷	yu	1
 原	yuan	1473346
 远	yuan	1319096
 员	yuan	887168
@@ -8395,6 +8426,7 @@ sort: by_weight
 鸼	zhou	3
 荮	zhou	2
 婤	zhou	1
+繇	zhou	1
 㑇	zhou	0
 㤘	zhou	0
 住	zhu	2114870
@@ -8448,8 +8480,9 @@ sort: by_weight
 疰	zhu	18
 蠋	zhu	13
 瘃	zhu	8
+𬣞	zhu	2
 术	zhu	1
-𬣞	zhu	0
+褚	zhu	1
 抓	zhua	82875
 爪	zhua	74674
 髽	zhua	9
